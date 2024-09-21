@@ -1,0 +1,83 @@
+.news-tabs {}
+
+.news-tabs__controls {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  column-gap: 0;
+  row-gap: 15px;
+}
+
+.news-tabs__control {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 33px;
+  padding-right: 33px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: $color-transparent;
+  border: 2px solid $color-transparent;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba($color-action, 0.6);
+  cursor: pointer;
+  transition: background-color $trans-default, color $trans-default, border-color $trans-default;
+
+  &:focus:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    background-color: $color-white;
+    border-color: $color-white;
+    color: rgba($color-action, 1);
+    transition: background-color $trans-default, color $trans-default, border-color $trans-default;
+  }
+
+  &:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active) {
+    color: rgba($color-action, 1);
+    transition: color $trans-default;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $color-transparent;
+    color: $color-action;
+    border-color: $color-action;
+    transition: background-color $trans-default, color $trans-default, border-color $trans-default;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  @include vp-1439 {}
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.24px;
+  }
+}
+
+.news-tabs__control.is-active {
+  background-color: $color-transparent;
+  color: $color-action;
+  border-color: $color-action;
+}
+
+.news-tabs__content {}
+
+.news-tabs__element {}
+
+.news-tabs__element.is-active {}
+
+.news-tabs__slider {}
+
+.news-tabs__wrapper {}
+
+.news-tabs__slide {}

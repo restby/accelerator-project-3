@@ -1,0 +1,213 @@
+.news-slide__container {
+  width: 100%;
+  max-width: 286px;
+  position: relative;
+  height: auto;
+  min-height: 400px;
+  display: flex;
+}
+
+.news-slide--main .news-slide__container {
+  max-width: 604px;
+}
+
+.news-slide__container picture {
+  font-size: 0;
+  line-height: 0;
+}
+
+.news-slide__container > picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.news-slide__content {
+  position: relative;
+  z-index: 3;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.news-slide__date,
+.news-slide__head,
+.news-slide__row {
+  background-color: $color-white-alternative;
+  border-radius: 0 12px 0 0;
+  position: relative;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: -16px;
+    width: 16px;
+    height: 16px;
+    background-color: $color-white-alternative;
+    transform: rotate(-90deg);
+    mask-size: 16px 16px;
+    mask-image: url("../__spritemap#sprite-icon-corner-view");
+  }
+}
+
+.news-slide__date {
+  padding-top: 12px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: -16px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: $color-white-alternative;
+    transform: rotate(-90deg);
+    mask-size: 16px 16px;
+    mask-image: url("../__spritemap#sprite-icon-corner-view");
+  }
+}
+
+.news-slide__head {
+  width: 100%;
+  max-width: 190px;
+  padding-top: 18px;
+  padding-bottom: 6px;
+  padding-right: 18px;
+}
+
+.news-slide--main .news-slide__head {
+  max-width: 426px;
+}
+
+.news-slide__row {
+  width: 100%;
+  max-width: 240px;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  padding-right: 18px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+
+.news-slide--main .news-slide__row {
+  max-width: 468px;
+}
+
+.news-slide__content b {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12px;
+  color: $color-action;
+}
+
+.news-slide__content h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 400;
+  color: $color-action;
+
+  @include vp-1439 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.news-slide__content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.news-slide__btn {
+  width: 30px;
+  height: 30px;
+  background-color: $color-action;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  transition: background-color $trans-default;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-white;
+    transition: background-color $trans-default;
+    width: 8px;
+    height: 8px;
+    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
+    mask-size: 8px 8px;
+  }
+}
+
+.news-slide__btn:hover:not(.disabled):not(:focus-visible):not(:active) {
+  background-color: $color-action;
+  transition: background-color $trans-default;
+}
+
+.news-slide__btn:active {
+  background-color: $color-action;
+  transition: background-color $trans-default, opacity $trans-default;
+  opacity: 0.7;
+}
+
+.news-slide__btn:focus::after,
+.news-slide__btn:focus-visible::after {
+  transform: rotate(45deg) translateX(-4px);
+  transform-origin: center center;
+}
+
+.news-slide__btn.disabled {
+  pointer-events: none;
+  border-color: $color-disabled;
+}
+
+.news-slide__btn:hover:not(.disabled):not(:focus):not(:focus-visible):not(:active),
+.news-slide__btn:active {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.news-slide__btn:hover:not(.disabled):not(:focus):not(:focus-visible):not(:active)::after,
+.news-slide__btn:active::after {
+  background-color: $color-action;
+  transform: rotate(45deg) translateX(-4px);
+  transform-origin: center center;
+  transition: background-color $trans-default;
+}

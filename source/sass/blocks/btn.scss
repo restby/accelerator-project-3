@@ -75,7 +75,7 @@
   color: $color-white;
 }
 
-.btn span {
+.btn span:not(.visually-hidden) {
   background-color: $color-action;
   border-radius: 50%;
   width: 46px;

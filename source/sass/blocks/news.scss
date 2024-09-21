@@ -1,0 +1,24 @@
+.news {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include vp-1439 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.news__title {
+  text-align: center;
+  margin-bottom: 40px;
+
+  @include vp-1439 {
+    margin-bottom: 30px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 24px;
+  }
+}
+
+.news__tabs {}

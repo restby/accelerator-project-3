@@ -219,13 +219,13 @@
   border-color: $color-disabled;
 }
 
-.programs-slide__btn:hover:not(.disabled):not(:focus-visible):not(:active),
+.programs-slide__btn:hover:not(.disabled):not(:focus):not(:focus-visible):not(:active),
 .programs-slide__btn:active {
   background-color: $color-white;
   transition: background-color $trans-default;
 }
 
-.programs-slide__btn:hover:not(.disabled):not(:focus-visible):not(:active)::after,
+.programs-slide__btn:hover:not(.disabled):not(:focus):not(:focus-visible):not(:active)::after,
 .programs-slide__btn:active::after {
   background-color: $color-action;
   transform: rotate(45deg) translateX(-4px);
