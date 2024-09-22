@@ -125,6 +125,13 @@
   }
 }
 
+.btn--link.about__link span {
+  @include vp-767 {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 .about__bottom {
   background-color: $color-action;
   border-radius: 20px;

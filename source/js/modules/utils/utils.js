@@ -9,4 +9,23 @@ const lazyLoadImages = () => {
   }
 };
 
-export { lazyLoadImages };
+const removeFocusAfterClick = () => {
+  const buttons = document.querySelectorAll('button');
+
+  if (buttons.length) {
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setTimeout(() => {
+          button.blur();
+        }, 100);
+        // setTimeout(() => {
+        //   button.classList.add('is-active');
+        // }, 400);
+      });
+    });
+  }
+};
+
+
+
+export { lazyLoadImages, removeFocusAfterClick };

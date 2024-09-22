@@ -239,7 +239,6 @@
             </li>
           </ul>
         </div>
-
       </div>
     </section>
     <section class="programs" id="programs" data-test="programs">
@@ -433,29 +432,30 @@
     <section class="news" id="news" data-test="news">
       <div class="container">
         <h2 class="news__title section-title">Новости и материалы</h2>
-        <div class="news__tabs news-tabs">
-          <div class="news-tabs__controls">
-            <button class="is-active news-tabs__control" type="button" data-news="tabs-control" data-tab="tab1">
+        <div class="news__tabs news-tab">
+          <div class="news-tab__controls">
+            <button class="news-tab__control is-active" type="button" data-tab="tab1" data-news="tabs-control">
               общее
             </button>
-            <button class="news-tabs__control" type="button" data-news="tabs-control" data-tab="tab2">
+            <button class="news-tab__control" type="button" data-tab="tab2" data-news="tabs-control">
               Волонтёрство
             </button>
-            <button class="news-tabs__control" type="button" data-news="tabs-control" data-tab="tab3">
+            <button class="news-tab__control" type="button" data-tab="tab3" data-news="tabs-control">
               Стажировки
             </button>
-            <button class="news-tabs__control" type="button" data-news="tabs-control" data-tab="tab4">
+            <button class="news-tab__control" type="button" data-tab="tab4" data-news="tabs-control">
               Карьера
             </button>
-            <button class="news-tabs__control" type="button" data-news="tabs-control" data-tab="tab5">
+            <button class="news-tab__control" type="button" data-tab="tab5" data-news="tabs-control">
               путешествия
             </button>
           </div>
-          <div class="news-tabs__content">
-            <div class="news-tabs__element is-active" data-tab-content="tab1" data-news="tabs-content">
-              <div class="news-tabs__slider">
-                <div class="news-tabs__wrapper">
-                  <div class="news-tabs__slide news-slide news-slide--main" data-news="slide">
+          <div class="news-tab__content">
+            <div class="news-tab__element is-active" data-tab-content="tab1" data-news="tabs-content">
+
+              <div class="news-tab__slider swiper" data-slider="news-tab-slider">
+                <div class="news-tab__wrapper swiper-wrapper">
+                  <div class="news-tab__slide news-slide news-slide--main swiper-slide" data-news="slide">
                     <div class="news-slide__container">
                       <picture>
                         <!-- mobile -->
@@ -495,7 +495,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-tabs__slide news-slide" data-news="slide">
+                  <div class="news-tab__slide news-slide news-slide--travels swiper-slide" data-news="slide">
                     <div class="news-slide__container">
                       <picture>
                         <!-- mobile -->
@@ -535,7 +535,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-tabs__slide news-slide" data-news="slide">
+                  <div class="news-tab__slide news-slide  news-slide--volunteering swiper-slide" data-news="slide">
                     <div class="news-slide__container">
                       <picture>
                         <!-- mobile -->
@@ -576,7 +576,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-tabs__slide news-slide" data-news="slide">
+                  <div class="news-tab__slide news-slide news-slide--career swiper-slide" data-news="slide">
                     <div class="news-slide__container">
                       <picture>
                         <!-- mobile -->
@@ -597,6 +597,684 @@
                         <img width="286" height="400" src="img/news/item-4-desktop.jpg"
                           srcset="img/news/item-4-desktop@2x.jpg 2x" alt="Интервью с участницей программы
                                                                                   стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>10/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Построй свою карьеру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="news-tab__navigation slider__navigation swiper-navigation">
+                <button
+                  class="news-tab__slider-btn news-tab__slider-btn--prev slider__btn slider__btn--prev swiper-button-prev">
+                  <span class="visually-hidden">Предыдущий слайд.</span>
+                </button>
+                <div class="news-tab__slider-pagination"></div>
+                <button
+                  class="news-tab__slider-btn news-tab__slider-btn--next slider__btn slider__btn--next swiper-button-next">
+                  <span class="visually-hidden">Следующий слайд.</span>
+                </button>
+              </div>
+
+
+            </div>
+            <div class="news-tab__element" data-tab-content="tab2" data-news="tabs-content">
+              <div class="news-tab__slider">
+                <div class="news-tab__wrapper">
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.webp 1x, img/news/item-2-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.jpg 1x, img/news/item-2-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.webp 1x, img/news/item-2-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.jpg 1x, img/news/item-2-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-2-desktop.webp 1x, img/news/item-2-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-2-desktop.jpg"
+                          srcset="img/news/item-2-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                              стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>20/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Путешествуем
+                            по миру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Какие места посещают
+                            наши студенты весной</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.webp 1x, img/news/item-3-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.jpg 1x, img/news/item-3-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.webp 1x, img/news/item-3-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.jpg 1x, img/news/item-3-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-3-desktop.webp 1x, img/news/item-3-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-3-desktop.jpg"
+                          srcset="img/news/item-3-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                              стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>17/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Новая
+                            программа
+                            волонтёрства</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Программа помощи детям
+                            длительностью 4 месяца</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.webp 1x, img/news/item-4-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.jpg 1x, img/news/item-4-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.webp 1x, img/news/item-4-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.jpg 1x, img/news/item-4-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-4-desktop.webp 1x, img/news/item-4-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-4-desktop.jpg"
+                          srcset="img/news/item-4-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                              стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>10/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Построй свою карьеру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide news-slide--main" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.webp 1x, img/news/item-1-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.jpg 1x, img/news/item-1-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.webp 1x, img/news/item-1-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.jpg 1x, img/news/item-1-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="604" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-1-desktop.webp 1x, img/news/item-1-desktop@2x.webp 2x">
+                        <img width="604" height="400" src="img/news/item-1-desktop.jpg"
+                          srcset="img/news/item-1-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                              стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>23/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Интервью с участницей программы
+                            стажировки</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Саша рассказывает, как попала в программу и как прошла 6-
+                            месячная стажировка в ISOFound</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-tab__element" data-tab-content="tab3" data-news="tabs-content">
+              <div class="news-tab__slider">
+                <div class="news-tab__wrapper">
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.webp 1x, img/news/item-3-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.jpg 1x, img/news/item-3-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.webp 1x, img/news/item-3-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.jpg 1x, img/news/item-3-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-3-desktop.webp 1x, img/news/item-3-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-3-desktop.jpg"
+                          srcset="img/news/item-3-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>17/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Новая
+                            программа
+                            волонтёрства</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Программа помощи детям
+                            длительностью 4 месяца</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.webp 1x, img/news/item-4-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.jpg 1x, img/news/item-4-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.webp 1x, img/news/item-4-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.jpg 1x, img/news/item-4-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-4-desktop.webp 1x, img/news/item-4-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-4-desktop.jpg"
+                          srcset="img/news/item-4-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>10/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Построй свою карьеру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide news-slide--main" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.webp 1x, img/news/item-1-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.jpg 1x, img/news/item-1-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.webp 1x, img/news/item-1-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.jpg 1x, img/news/item-1-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="604" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-1-desktop.webp 1x, img/news/item-1-desktop@2x.webp 2x">
+                        <img width="604" height="400" src="img/news/item-1-desktop.jpg"
+                          srcset="img/news/item-1-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>23/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Интервью с участницей программы
+                            стажировки</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Саша рассказывает, как попала в программу и как прошла 6-
+                            месячная стажировка в ISOFound</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.webp 1x, img/news/item-2-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.jpg 1x, img/news/item-2-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.webp 1x, img/news/item-2-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.jpg 1x, img/news/item-2-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-2-desktop.webp 1x, img/news/item-2-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-2-desktop.jpg"
+                          srcset="img/news/item-2-desktop@2x.jpg 2x"
+                          alt="Интервью с участницей программы
+                                                                                                                            стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>20/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Путешествуем
+                            по миру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Какие места посещают
+                            наши студенты весной</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-tab__element" data-tab-content="tab4" data-news="tabs-content">
+              <div class="news-tab__slider">
+                <div class="news-tab__wrapper">
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.webp 1x, img/news/item-4-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.jpg 1x, img/news/item-4-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.webp 1x, img/news/item-4-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.jpg 1x, img/news/item-4-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-4-desktop.webp 1x, img/news/item-4-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-4-desktop.jpg"
+                          srcset="img/news/item-4-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>10/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Построй свою карьеру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide news-slide--main" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.webp 1x, img/news/item-1-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.jpg 1x, img/news/item-1-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.webp 1x, img/news/item-1-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.jpg 1x, img/news/item-1-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="604" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-1-desktop.webp 1x, img/news/item-1-desktop@2x.webp 2x">
+                        <img width="604" height="400" src="img/news/item-1-desktop.jpg"
+                          srcset="img/news/item-1-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>23/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Интервью с участницей программы
+                            стажировки</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Саша рассказывает, как попала в программу и как прошла 6-
+                            месячная стажировка в ISOFound</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.webp 1x, img/news/item-2-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.jpg 1x, img/news/item-2-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.webp 1x, img/news/item-2-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.jpg 1x, img/news/item-2-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-2-desktop.webp 1x, img/news/item-2-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-2-desktop.jpg"
+                          srcset="img/news/item-2-desktop@2x.jpg 2x"
+                          alt="Интервью с участницей программы
+                                                                                                                            стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>20/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Путешествуем
+                            по миру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Какие места посещают
+                            наши студенты весной</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.webp 1x, img/news/item-3-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.jpg 1x, img/news/item-3-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.webp 1x, img/news/item-3-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.jpg 1x, img/news/item-3-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-3-desktop.webp 1x, img/news/item-3-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-3-desktop.jpg"
+                          srcset="img/news/item-3-desktop@2x.jpg 2x"
+                          alt="Интервью с участницей программы
+                                                                                                                            стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>17/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Новая
+                            программа
+                            волонтёрства</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Программа помощи детям
+                            длительностью 4 месяца</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-tab__element" data-tab-content="tab5" data-news="tabs-content">
+              <div class="news-tab__slider">
+                <div class="news-tab__wrapper">
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.webp 1x, img/news/item-3-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-3-mobile.jpg 1x, img/news/item-3-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.webp 1x, img/news/item-3-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-3-tablet.jpg 1x, img/news/item-3-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-3-desktop.webp 1x, img/news/item-3-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-3-desktop.jpg"
+                          srcset="img/news/item-3-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>17/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Новая
+                            программа
+                            волонтёрства</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Программа помощи детям
+                            длительностью 4 месяца</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.webp 1x, img/news/item-2-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-2-mobile.jpg 1x, img/news/item-2-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.webp 1x, img/news/item-2-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-2-tablet.jpg 1x, img/news/item-2-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-2-desktop.webp 1x, img/news/item-2-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-2-desktop.jpg"
+                          srcset="img/news/item-2-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>20/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Путешествуем
+                            по миру</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Какие места посещают
+                            наши студенты весной</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide news-slide--main" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.webp 1x, img/news/item-1-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-1-mobile.jpg 1x, img/news/item-1-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.webp 1x, img/news/item-1-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-1-tablet.jpg 1x, img/news/item-1-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="604" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-1-desktop.webp 1x, img/news/item-1-desktop@2x.webp 2x">
+                        <img width="604" height="400" src="img/news/item-1-desktop.jpg"
+                          srcset="img/news/item-1-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
+                      </picture>
+                      <div class="news-slide__content">
+                        <div class="news-slide__date">
+                          <b>23/03/2023</b>
+                        </div>
+                        <div class="news-slide__head">
+                          <h3>Интервью с участницей программы
+                            стажировки</h3>
+                        </div>
+                        <div class="news-slide__row">
+                          <p>Саша рассказывает, как попала в программу и как прошла 6-
+                            месячная стажировка в ISOFound</p>
+                          <a class="news-slide__btn" href="#">
+                            <span></span><span class="visually-hidden">перейти к
+                              новости</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-tab__slide news-slide" data-news="slide">
+                    <div class="news-slide__container">
+                      <picture>
+                        <!-- mobile -->
+                        <source width="290" height="330" type="image/webp" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.webp 1x, img/news/item-4-mobile@2x.webp 2x">
+                        <source width="290" height="330" type="image/jpeg" media="(max-width: 767px)"
+                          srcset="img/news/item-4-mobile.jpg 1x, img/news/item-4-mobile@2x.jpg 2x">
+                        <!-- tablet -->
+                        <source width="324" height="350" type="image/webp"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.webp 1x, img/news/item-4-tablet@2x.webp 2x">
+                        <source width="324" height="350" type="image/jpeg"
+                          media="(min-width: 768px) and (max-width: 1439px)"
+                          srcset="img/news/item-4-tablet.jpg 1x, img/news/item-4-tablet@2x.jpg 2x">
+                        <!-- desktop -->
+                        <source width="286" height="400" type="image/webp" media="(min-width: 1440px)"
+                          srcset="img/news/item-4-desktop.webp 1x, img/news/item-4-desktop@2x.webp 2x">
+                        <img width="286" height="400" src="img/news/item-4-desktop.jpg"
+                          srcset="img/news/item-4-desktop@2x.jpg 2x" alt="Интервью с участницей программы
+                                                                                                          стажировки.">
                       </picture>
                       <div class="news-slide__content">
                         <div class="news-slide__date">

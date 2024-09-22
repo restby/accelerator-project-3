@@ -75,6 +75,13 @@
   }
 }
 
+.btn--link.programs__btn span {
+  @include vp-767 {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 .programs__slider.swiper {
   width: 100%;
   height: 100%;

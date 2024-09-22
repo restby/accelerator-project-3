@@ -1,8 +1,10 @@
-import { lazyLoadImages } from '../js/modules/utils/utils';
+import { lazyLoadImages, removeFocusAfterClick } from '../js/modules/utils/utils';
 import { initBurgerMenu } from '../js/modules/burger-menu';
 import { initHeroSlider } from '../js/modules/sliders/hero-slider';
 import { initProgramsSlider } from '../js/modules/sliders/programs-slider';
 import { initReviewsSlider } from '../js/modules/sliders/reviews-slider';
+import { initNewsTabs } from '../js/modules/tabs/init-news-tabs';
+import { initNewsSlider } from '../js/modules/sliders/news-slider';
 
 window.addEventListener('DOMContentLoaded', () => {
   lazyLoadImages();
@@ -10,7 +12,10 @@ window.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
 
   window.addEventListener('load', () => {
+    removeFocusAfterClick();
     initProgramsSlider();
     initReviewsSlider();
+    initNewsTabs();
+    initNewsSlider();
   });
 });
