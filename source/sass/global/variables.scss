@@ -14,7 +14,7 @@ $color-error: #ff5e66;
 $color-disabled: #a9afb7;
 $color-transparent: rgba(255, 255, 255, 0);
 $color-overlay: rgba(#316dc2, 0.2);
-$color-overlay-alternative: rgba(#0d1d33, 0.4);
+$color-overlay-alternative: rgba(#0d1d33, 0.3);
 $fz-default: 16px;
 $font-family: "Manrope", "Arial", sans-serif;
 $ff-placeholder: $font-family;
@@ -23,4 +23,4 @@ $ff-placeholder: $font-family;
 // ---------------------------------
 
 $tf-default: ease;
-$trans-default: 0.4s $tf-default;
+$trans-default: 0.3s $tf-default;

@@ -303,6 +303,10 @@
   display: inline-flex;
   column-gap: 20px;
   width: auto;
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
 .news-tab__slider-bullet {

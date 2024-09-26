@@ -1,37 +1,6 @@
 .map__image {
   font-size: 0;
   line-height: 0;
-  position: relative;
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 70px;
-    height: 68px;
-    left: 608px;
-    top: 78px;
-    background-color: $color-action;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-image: url("../__spritemap#sprite-icon-pin-view");
-    mask-size: 52px 69px;
-
-    @include vp-1439 {
-      width: 30px;
-      height: 40px;
-      top: 108px;
-      left: 344px;
-      mask-size: 30px 40px;
-    }
-
-    @include vp-767 {
-      width: 18px;
-      height: 24px;
-      top: 46px;
-      left: 143px;
-      mask-size: 18px 24px;
-    }
-  }
 }
 
 .map__image img {

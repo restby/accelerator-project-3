@@ -1,4 +1,6 @@
 .form {
+  font-size: 0;
+  line-height: 0;
   padding-top: 60px;
   padding-bottom: 60px;
 
@@ -14,9 +16,30 @@
 }
 
 .form .container {
+  @include vp-1439 {
+    padding-left: 58px;
+    padding-right: 58px;
+  }
+
   @include vp-767 {
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 43px;
+    padding-bottom: 40px;
+
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-mobile.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-mobile.jpg");
+
+    @media (resolution >=2dppx) {
+      @supports (background-image: url("image.webp")) {
+        background-image: url("../../img/background/bg-form-mobile@2x.webp");
+      }
+
+      background-image: url("../../img/background/bg-form-mobile@2x.jpg");
+    }
   }
 }
 
@@ -57,19 +80,7 @@
   }
 
   @include vp-767 {
-    @supports (background-image: url("image.webp")) {
-      background-image: url("../../img/background/bg-form-mobile.webp");
-    }
-
-    background-image: url("../../img/background/bg-form-mobile.jpg");
-
-    @media (resolution >=2dppx) {
-      @supports (background-image: url("image.webp")) {
-        background-image: url("../../img/background/bg-form-mobile@2x.webp");
-      }
-
-      background-image: url("../../img/background/bg-form-mobile@2x.jpg");
-    }
+    background-image: none;
   }
 }
 
@@ -116,55 +127,98 @@
   }
 
   @include vp-767 {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-size: 14px;
   }
 }
 
 .form__title {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
   margin-bottom: 20px;
   padding-top: 14px;
   padding-bottom: 14px;
   color: $color-white;
+
+  @include vp-1439 {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    margin-bottom: 9px;
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .form form {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
+  @include vp-767 {
+    row-gap: 0;
+  }
 }
 
 .form__field {
   display: flex;
   flex-direction: column;
 
-  &--name {}
+  &--name {
+    @include vp-767 {
+      margin-bottom: 21px;
+    }
+  }
 
-  &--phone {}
+  &--phone {
+    @include vp-767 {
+      margin-bottom: 21px;
+    }
+  }
 
-  &--message {}
+  &--message {
+    @include vp-767 {
+      margin-bottom: 20px;
+    }
+  }
 
-  &--cities {}
+  &--cities {
+    @include vp-767 {
+      margin-bottom: 20px;
+    }
+  }
 
   &--consent {
     flex-direction: row;
     align-items: flex-start;
+
+    @include vp-767 {
+      margin-bottom: 20px;
+    }
   }
 }
 
 .form__field--name {}
 
 .form__label {
+  margin-bottom: 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  color: $color-white-alternative;
+  color: rgba($color-white-alternative, 0.8);
 
   @include vp-1439 {
     line-height: 20px;
   }
 
   @include vp-767 {
+    margin-bottom: 11px;
     font-size: 12px;
     line-height: 14px;
   }
@@ -176,9 +230,255 @@
 
 .form__field--message {}
 
-.form__field--cities {}
+.form__field--cities {
+  position: relative;
 
-.form__field--consent {}
+  &::after {
+    position: absolute;
+    content: "";
+    right: 21px;
+    bottom: 18px;
+    pointer-events: none;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-white;
+    width: 16px;
+    height: 16px;
+    mask-image: url("../__spritemap#sprite-icon-select-arrow-view");
+    mask-size: 16px 9px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  @include vp-1439 {
+    padding-top: 3px;
+  }
+
+  @include vp-767 {
+    max-width: 260px;
+    padding-top: 1px;
+  }
+}
+
+.form__field--cities .form__label {
+  line-height: 14px;
+
+  @include vp-1439 {
+    margin-bottom: 15px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 11px;
+  }
+}
+
+.form__field--consent {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 0;
+  line-height: 0;
+
+  @include vp-1439 {
+    padding-top: 1px;
+  }
+
+  @include vp-767 {
+    padding-top: 0;
+  }
+}
+
+.form__field--consent .form__label {
+  margin-bottom: 0;
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+  }
+
+  &::before {
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: -4px;
+    background-color: $color-white;
+    border-radius: 2px;
+    border: 1px solid $color-white;
+    transition: background-color $trans-default;
+
+    @include vp-767 {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &::after {
+    display: none;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-action;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 5px;
+    mask-image: url("../__spritemap#sprite-icon-checked-view");
+    mask-size: 10px 8px;
+  }
+
+  @include vp-767 {
+    line-height: 14px;
+  }
+}
+
+.form__field--consent br {
+  display: none;
+
+  @include vp-767 {
+    display: inline;
+  }
+}
+
+.form__field--consent input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.form__field--consent input[type="checkbox"]:focus:not(:checked) + .form__label::before,
+.form__field--consent input[type="checkbox"]:focus-visible:not(:checked) + .form__label::before,
+.form__field--consent input[type="checkbox"]:hover:not(:checked) + .form__label::before {
+  background-color: $color-transparent;
+  transition: background-color $trans-default;
+}
+
+.form__field--consent input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+.form__field--consent input[type="checkbox"]:disabled + .form__label::before {
+  background-color: rgba($color-white, 0.6);
+}
+
+.form__field--consent.is-error input[type="checkbox"] + .form__label::before {
+  background-color: rgba($color-error, 0.2);
+  border-color: rgba($color-error, 0.7);
+}
+
+.form__field--consent input[type="checkbox"]:checked + .form__label::before {
+  background-color: $color-white;
+}
+
+.form__field--consent input[type="checkbox"]:checked + .form__label::after {
+  display: block;
+}
+
+.form__field--consent input[type="checkbox"]:checked:focus + .form__label::before,
+.form__field--consent input[type="checkbox"]:checked:focus-visible + .form__label::before,
+.form__field--consent input[type="checkbox"]:checked:hover + .form__label::before {
+  background-color: $color-transparent;
+  transition: background-color $trans-default;
+}
+
+.form__field--consent input[type="checkbox"]:checked:focus + .form__label::after,
+.form__field--consent input[type="checkbox"]:checked:focus-visible + .form__label::after,
+.form__field--consent input[type="checkbox"]:checked:hover + .form__label::after {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.form__field--consent input[type="checkbox"]:disabled:checked {
+  cursor: not-allowed;
+}
+
+.form__field--consent input[type="checkbox"]:disabled:checked + .form__label::before {
+  background-color: $color-disabled;
+  border-color: $color-disabled;
+}
+
+.form__field--consent input[type="checkbox"]:disabled:checked + .form__label::after {
+  background-color: rgba($color-white, 0.7);
+}
+
+.form__field input:not([type="checkbox"]),
+.form__field textarea {
+  background-color: $color-transparent;
+  border: 1px solid rgba($color-white, 0.3);
+  border-radius: 8px;
+  padding: 13px 20px;
+  transition: border-color $trans-default;
+
+  &:focus,
+  &:focus-visible,
+  &:hover,
+  &:active {
+    border-color: $color-white;
+    transition: border-color $trans-default;
+  }
+
+  &:disabled {
+    background-color: rgba($color-white, 0.2);
+    border-color: rgba($color-white, 0.4);
+  }
+}
+
+.form__field.is-error input:not([type="checkbox"]) {
+  background-color: rgba($color-error, 0.2);
+  border-color: $color-error;
+}
+
+.form__field input:not([type="checkbox"]) {
+  min-height: 50px;
+}
+
+.form__field textarea {
+  min-height: 90px;
+  resize: none;
+
+  @include vp-1439 {
+    min-height: 88px;
+  }
+
+  @include vp-767 {
+    min-height: 94px;
+  }
+}
+
+.form__field select {
+  padding: 16px 20px;
+  background-color: $color-transparent;
+  border: 1px solid rgba($color-white, 0.3);
+  min-height: 52px;
+  border-radius: 8px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.form__field option {
+  padding: 17px 20px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $color-dark;
+
+  &:hover {
+    background-color: $color-action;
+  }
+
+}
 
 .form__field--btn button {
   margin-top: 20px;
@@ -188,13 +488,27 @@
   min-height: 56px;
   border: 1px solid $color-white;
   background-color: $color-transparent;
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 30px;
   transition: background-color $trans-default;
+  cursor: pointer;
+
+  @include vp-1439 {
+    max-width: 352px;
+  }
+
+  @include vp-767 {
+    margin-top: 0;
+    min-height: 44px;
+    max-width: 260px;
+  }
 }
 
 .form__field--btn b {
+  width: 100%;
+  max-width: 238px;
   font-size: 14px;
   font-weight: 500;
   line-height: 14px;
@@ -204,9 +518,15 @@
   color: $color-white;
   transition: color $trans-default;
   border-color: $color-white;
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 12px;
+  }
 }
 
 .form__field--btn span {
+  flex-shrink: 0;
   background-color: $color-white;
   border-radius: 50%;
   width: 46px;
@@ -236,34 +556,72 @@
   }
 }
 
-.form__field--btn button:focus,
-.form__field--btn button:focus-visible {}
-
-.form__field--btn button:focus b,
-.form__field--btn button:focus-visible b {}
-
-.form__field--btn button:focus span,
-.form__field--btn button:focus-visible span {}
-
 .form__field--btn button:focus span::after,
-.form__field--btn button:focus-visible span::after {}
+.form__field--btn button:focus-visible span::after {
+  transform: rotate(45deg) translateX(-4px);
+  transform-origin: center center;
+  transition: background-color $trans-default;
+}
 
 
-.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) {}
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
 
-.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) b {}
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) b {
+  color: $color-action;
+  transition: color $trans-default;
+}
 
-.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) span {}
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) span {
+  background-color: $color-action;
+  transition: background-color $trans-default;
+}
 
-.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) span::after {}
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) span::after {
+  background-color: $color-white;
+  transform: rotate(45deg) translateX(-4px);
+  transform-origin: center center;
+  transition: background-color $trans-default;
+}
 
 
-.form__field--btn button:active {}
+.form__field--btn button:active:not(:disabled) {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
 
-.form__field--btn button:active b {}
+.form__field--btn button:active:not(:disabled) b {
+  color: rgba($color-action, 0.7);
+  transition: color $trans-default;
+}
 
-.form__field--btn button:active span {}
+.form__field--btn button:active:not(:disabled) span {
+  background-color: $color-action;
+  transition: background-color $trans-default;
+}
 
-.form__field--btn button:active span::after {}
+.form__field--btn button:active:not(:disabled) span::after {
+  background-color: rgba($color-white, 0.7);
+  transform: rotate(45deg) translateX(-4px);
+  transform-origin: center center;
+  transition: background-color $trans-default;
+}
 
-.form__field--btn:disabled {}
+.form__field--btn button:disabled {
+  border-color: $color-disabled;
+  cursor: not-allowed;
+}
+
+.form__field--btn button:disabled span {
+  background-color: $color-disabled;
+}
+
+.form__field--btn button:disabled b {
+  color: $color-disabled;
+}
+
+.form__field--btn button:disabled span::after {
+  background-color: rgba($color-white, 0.6);
+}
