@@ -5,6 +5,7 @@ import { initProgramsSlider } from '../js/modules/sliders/programs-slider';
 import { initReviewsSlider } from '../js/modules/sliders/reviews-slider';
 import { initNewsTabs } from '../js/modules/tabs/init-news-tabs';
 import { initNewsSlider } from '../js/modules/sliders/news-slider';
+import { initFaqAccordions } from '../js/modules/accordions/faq-accordion';
 
 window.addEventListener('DOMContentLoaded', () => {
   lazyLoadImages();
@@ -17,5 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initReviewsSlider();
     initNewsTabs();
     initNewsSlider();
+    initFaqAccordions();
   });
 });

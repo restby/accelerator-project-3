@@ -1,0 +1,269 @@
+.form {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include vp-1439 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include vp-767 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.form .container {
+  @include vp-767 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.form__container {
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+
+  @supports (background-image: url("image.webp")) {
+    background-image: url("../../img/background/bg-form-desktop.webp");
+  }
+
+  background-image: url("../../img/background/bg-form-desktop.jpg");
+
+  @media (resolution >=2dppx) {
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-desktop@2x.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-desktop@2x.jpg");
+  }
+
+  @include vp-1439 {
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-tablet.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-tablet.jpg");
+
+    @media (resolution >=2dppx) {
+      @supports (background-image: url("image.webp")) {
+        background-image: url("../../img/background/bg-form-tablet@2x.webp");
+      }
+
+      background-image: url("../../img/background/bg-form-tablet@2x.jpg");
+    }
+  }
+
+  @include vp-767 {
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-mobile.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-mobile.jpg");
+
+    @media (resolution >=2dppx) {
+      @supports (background-image: url("image.webp")) {
+        background-image: url("../../img/background/bg-form-mobile@2x.webp");
+      }
+
+      background-image: url("../../img/background/bg-form-mobile@2x.jpg");
+    }
+  }
+}
+
+.form__wrapper {
+  width: 100%;
+  max-width: 490px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: $color-action;
+  border-radius: 16px;
+
+
+  @include vp-1439 {
+    max-width: 442px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 36px;
+  }
+
+  @include vp-767 {
+    max-width: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 27px;
+  }
+}
+
+.form__head {}
+
+.form__head p {
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: $color-white-alternative;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}
+
+.form__title {
+  margin-bottom: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: $color-white;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+
+  &--name {}
+
+  &--phone {}
+
+  &--message {}
+
+  &--cities {}
+
+  &--consent {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.form__field--name {}
+
+.form__label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $color-white-alternative;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.form__error-text {}
+
+.form__field--phone {}
+
+.form__field--message {}
+
+.form__field--cities {}
+
+.form__field--consent {}
+
+.form__field--btn button {
+  margin-top: 20px;
+  padding: 4px;
+  padding-left: 30px;
+  border-radius: 30px;
+  min-height: 56px;
+  border: 1px solid $color-white;
+  background-color: $color-transparent;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color $trans-default;
+}
+
+.form__field--btn b {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-white;
+  transition: color $trans-default;
+  border-color: $color-white;
+}
+
+.form__field--btn span {
+  background-color: $color-white;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  position: relative;
+  transition: background-color $trans-default;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-action;
+    transition: background-color $trans-default;
+    width: 8px;
+    height: 8px;
+    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
+    mask-size: 8px 8px;
+  }
+
+  @include vp-767 {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.form__field--btn button:focus,
+.form__field--btn button:focus-visible {}
+
+.form__field--btn button:focus b,
+.form__field--btn button:focus-visible b {}
+
+.form__field--btn button:focus span,
+.form__field--btn button:focus-visible span {}
+
+.form__field--btn button:focus span::after,
+.form__field--btn button:focus-visible span::after {}
+
+
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) {}
+
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) b {}
+
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) span {}
+
+.form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active) span::after {}
+
+
+.form__field--btn button:active {}
+
+.form__field--btn button:active b {}
+
+.form__field--btn button:active span {}
+
+.form__field--btn button:active span::after {}
+
+.form__field--btn:disabled {}

@@ -1,9 +1,13 @@
 .news-slide.swiper-slide {
-  width: 286px;
+  max-width: 286px;
+
+  @include vp-1439 {}
 }
 
 .news-slide--main.swiper-slide {
-  width: 604px;
+  max-width: 604px;
+
+  @include vp-1439 {}
 }
 
 .news-slide__container {
@@ -15,10 +19,19 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+
+  @include vp-1439 {
+    max-width: 324px;
+    min-height: 350px;
+  }
 }
 
 .news-slide--main .news-slide__container {
   max-width: 604px;
+
+  @include vp-1439 {
+    max-width: 324px;
+  }
 }
 
 .news-slide__container picture {
@@ -41,6 +54,7 @@
 }
 
 .news-slide__content {
+  width: 100%;
   position: relative;
   z-index: 3;
   margin-top: auto;
@@ -101,6 +115,11 @@
 
   padding-bottom: 6px;
   padding-top: 8px;
+
+  @include vp-1439 {
+    max-width: 207px;
+    padding-top: 11px;
+  }
 }
 
 .news-slide__row {
@@ -115,6 +134,12 @@
   min-height: 63px;
   align-items: flex-start;
   padding-top: 10px;
+  padding-bottom: 17px;
+
+  @include vp-1439 {
+    max-width: 240px;
+    align-items: center;
+  }
 }
 
 // .news-slide--main .news-slide__date {}
@@ -130,6 +155,11 @@
 
   padding-bottom: 8px;
   padding-top: 16px;
+
+  @include vp-1439 {
+    padding-top: 8px;
+    max-width: 207px;
+  }
 }
 
 // .news-slide--travels .news-slide__head {}
@@ -137,16 +167,24 @@
 // .news-slide--volunteering .news-slide__head {}
 
 // .news-slide--career .news-slide__head {}
+.news-slide--volunteering .news-slide__row {
+  max-width: 244px;
+
+  @include vp-1439 {
+    max-width: 240px;
+  }
+}
 
 .news-slide--main .news-slide__row {
   max-width: 468px;
+
+  @include vp-1439 {
+    max-width: 240px;
+  }
 }
 
 // .news-slide--travels .news-slide__row {}
 
-.news-slide--volunteering .news-slide__row {
-  max-width: 244px;
-}
 
 // .news-slide--career .news-slide__row {}
 
@@ -254,4 +292,33 @@
   transform: rotate(45deg) translateX(-4px);
   transform-origin: center center;
   transition: background-color $trans-default;
+}
+
+.news-tab__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.news-tab__slider-pagination.swiper-pagination-bullets.swiper-pagination-clickable {
+  display: inline-flex;
+  column-gap: 20px;
+  width: auto;
+}
+
+.news-tab__slider-bullet {
+  width: 32px;
+  height: 32px;
+  background-color: $color-transparent;
+  border-radius: 50%;
+  border: none;
+  color: rgba($color-action, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-tab__slider-bullet--is-active {
+  background-color: $color-action;
+  color: $color-white;
 }
