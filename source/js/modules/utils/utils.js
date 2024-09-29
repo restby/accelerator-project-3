@@ -27,5 +27,4 @@ const removeFocusAfterClick = () => {
 };
 
 
-
 export { lazyLoadImages, removeFocusAfterClick };

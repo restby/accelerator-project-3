@@ -1,7 +1,7 @@
 export const initFaqAccordions = () => {
   const buttons = document.querySelectorAll('[data-faq="accordion-button"]');
-  if (!buttons && !faqItems) {
-    return
+  if (!buttons) {
+    return;
   }
 
   buttons.forEach((button) => {
@@ -20,14 +20,5 @@ export const initFaqAccordions = () => {
       content.classList.toggle('is-active');
       faqItem.classList.toggle('is-active');
     });
-
-    // button.addEventListener('mousedown', () => {
-    //   const faqItem = button.closest('.faq-item');
-    //   const isActive = button.classList.contains('is-active');
-
-    //   if (!isActive) {
-    //     faqItem.style.backgroundColor = '#275699'
-    //   }
-    // });
   });
 };
