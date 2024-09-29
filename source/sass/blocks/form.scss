@@ -33,7 +33,7 @@
 
     background-image: url("../../img/background/bg-form-mobile.jpg");
 
-    @media (resolution >=2dppx) {
+    @media (resolution >= 2dppx) {
       @supports (background-image: url("image.webp")) {
         background-image: url("../../img/background/bg-form-mobile@2x.webp");
       }
@@ -55,7 +55,7 @@
 
   background-image: url("../../img/background/bg-form-desktop.jpg");
 
-  @media (resolution >=2dppx) {
+  @media (resolution >= 2dppx) {
     @supports (background-image: url("image.webp")) {
       background-image: url("../../img/background/bg-form-desktop@2x.webp");
     }
@@ -70,7 +70,7 @@
 
     background-image: url("../../img/background/bg-form-tablet.jpg");
 
-    @media (resolution >=2dppx) {
+    @media (resolution >= 2dppx) {
       @supports (background-image: url("image.webp")) {
         background-image: url("../../img/background/bg-form-tablet@2x.webp");
       }
@@ -111,8 +111,6 @@
     padding-bottom: 27px;
   }
 }
-
-.form__head {}
 
 .form__head p {
   margin: 0;
@@ -188,23 +186,21 @@
     }
   }
 
-  &--cities {
-    @include vp-767 {
-      margin-bottom: 20px;
-    }
-  }
+  // &--cities {
+  //   @include vp-767 {
+  //     margin-bottom: 20px;
+  //   }
+  // }
 
-  &--consent {
-    flex-direction: row;
-    align-items: flex-start;
+  // &--consent {
+  //   flex-direction: row;
+  //   align-items: flex-start;
 
-    @include vp-767 {
-      margin-bottom: 20px;
-    }
-  }
+  //   @include vp-767 {
+  //     margin-bottom: 20px;
+  //   }
+  // }
 }
-
-.form__field--name {}
 
 .form__label {
   margin-bottom: 12px;
@@ -223,12 +219,6 @@
     line-height: 14px;
   }
 }
-
-.form__error-text {}
-
-.form__field--phone {}
-
-.form__field--message {}
 
 .form__field--cities {
   position: relative;
@@ -255,6 +245,7 @@
   }
 
   @include vp-767 {
+    margin-bottom: 20px;
     max-width: 260px;
     padding-top: 1px;
   }
@@ -284,6 +275,7 @@
   }
 
   @include vp-767 {
+    margin-bottom: 20px;
     padding-top: 0;
   }
 }
@@ -345,7 +337,7 @@
   }
 }
 
-.form__field--consent input[type="checkbox"] {
+.form__field--consent input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -358,63 +350,64 @@
   clip-path: inset(100%);
 }
 
-.form__field--consent input[type="checkbox"]:focus:not(:checked) + .form__label::before,
-.form__field--consent input[type="checkbox"]:focus-visible:not(:checked) + .form__label::before,
-.form__field--consent input[type="checkbox"]:hover:not(:checked) + .form__label::before {
+.form__field--consent input:focus:not(:checked) + .form__label::before,
+.form__field--consent input:focus-visible:not(:checked) + .form__label::before,
+.form__field--consent input:hover:not(:checked) + .form__label::before {
   background-color: $color-transparent;
   transition: background-color $trans-default;
 }
 
-.form__field--consent input[type="checkbox"]:disabled {
+.form__field--consent input:disabled {
   cursor: not-allowed;
 }
 
-.form__field--consent input[type="checkbox"]:disabled + .form__label::before {
+.form__field--consent input:disabled + .form__label::before {
   background-color: rgba($color-white, 0.6);
 }
 
-.form__field--consent.is-error input[type="checkbox"] + .form__label::before {
+.form__field--consent.is-error input + .form__label::before {
   background-color: rgba($color-error, 0.2);
   border-color: rgba($color-error, 0.7);
 }
 
-.form__field--consent input[type="checkbox"]:checked + .form__label::before {
+.form__field--consent input:checked + .form__label::before {
   background-color: $color-white;
 }
 
-.form__field--consent input[type="checkbox"]:checked + .form__label::after {
+.form__field--consent input:checked + .form__label::after {
   display: block;
 }
 
-.form__field--consent input[type="checkbox"]:checked:focus + .form__label::before,
-.form__field--consent input[type="checkbox"]:checked:focus-visible + .form__label::before,
-.form__field--consent input[type="checkbox"]:checked:hover + .form__label::before {
+.form__field--consent input:checked:focus + .form__label::before,
+.form__field--consent input:checked:focus-visible + .form__label::before,
+.form__field--consent input:checked:hover + .form__label::before {
   background-color: $color-transparent;
   transition: background-color $trans-default;
 }
 
-.form__field--consent input[type="checkbox"]:checked:focus + .form__label::after,
-.form__field--consent input[type="checkbox"]:checked:focus-visible + .form__label::after,
-.form__field--consent input[type="checkbox"]:checked:hover + .form__label::after {
+.form__field--consent input:checked:focus + .form__label::after,
+.form__field--consent input:checked:focus-visible + .form__label::after,
+.form__field--consent input:checked:hover + .form__label::after {
   background-color: $color-white;
   transition: background-color $trans-default;
 }
 
-.form__field--consent input[type="checkbox"]:disabled:checked {
+.form__field--consent input:disabled:checked {
   cursor: not-allowed;
 }
 
-.form__field--consent input[type="checkbox"]:disabled:checked + .form__label::before {
+.form__field--consent input:disabled:checked + .form__label::before {
   background-color: $color-disabled;
   border-color: $color-disabled;
 }
 
-.form__field--consent input[type="checkbox"]:disabled:checked + .form__label::after {
+.form__field--consent input:disabled:checked + .form__label::after {
   background-color: rgba($color-white, 0.7);
 }
 
-.form__field input:not([type="checkbox"]),
-.form__field textarea {
+.form__field--name input,
+.form__field--phone input,
+.form__field--message textarea {
   background-color: $color-transparent;
   border: 1px solid rgba($color-white, 0.3);
   border-radius: 8px;
@@ -435,12 +428,15 @@
   }
 }
 
-.form__field.is-error input:not([type="checkbox"]) {
+.form__field--name.is-error input,
+.form__field--phone.is-error input,
+.form__field--message.is-error textarea {
   background-color: rgba($color-error, 0.2);
   border-color: $color-error;
 }
 
-.form__field input:not([type="checkbox"]) {
+.form__field--name input,
+.form__field--phone input {
   min-height: 50px;
 }
 
@@ -477,7 +473,6 @@
   &:hover {
     background-color: $color-action;
   }
-
 }
 
 .form__field--btn button {
