@@ -21,7 +21,6 @@
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-column-gap: 0;
-  grid-row-gap: 40px;
   justify-content: space-between;
   justify-items: start;
   align-items: start;
@@ -40,7 +39,6 @@
     padding: 0 15px;
     max-width: 320px;
     grid-template-columns: repeat(3, auto);
-    grid-row-gap: 30px;
     grid-template-rows: minmax(30px, auto) minmax(400px, auto) auto;
     grid-row-gap: 30px;
   }

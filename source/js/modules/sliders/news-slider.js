@@ -12,7 +12,6 @@ const initNewsSlider = () => {
   const originalSlides = Array.from(newsSlider.querySelectorAll('.swiper-slide'));
 
   const duplicateSlides = () => {
-    const slides = Array.from(newsSlider.querySelectorAll('.swiper-slide'));
     const wrapper = newsSlider.querySelector('.swiper-wrapper');
     wrapper.innerHTML = ''; // Очистить текущие слайды
 
@@ -49,16 +48,7 @@ const initNewsSlider = () => {
     }
   };
 
-  window.addEventListener('resize', () => {
-    duplicateSlides();
-    swapSlides();
-    swiper.update(); // Обновить Swiper после изменения слайдов
-  });
-
-  duplicateSlides();
-  swapSlides();
-
-  const swiper = new Swiper(newsSlider, {
+  const swiperInstance = new Swiper(newsSlider, {
     modules: [Navigation, Pagination],
     navigation: {
       nextEl: '.news-tab__slider-btn--next',
@@ -115,6 +105,15 @@ const initNewsSlider = () => {
     },
   });
 
+  window.addEventListener('resize', () => {
+    duplicateSlides();
+    swapSlides();
+    swiperInstance.update(); // Обновить Swiper после изменения слайдов
+  });
+
+  duplicateSlides();
+  swapSlides();
+
   function updatePagination(swiper) {
     const totalSlides = swiper.slides.length;
     const currentIndex = Math.floor(swiper.activeIndex / swiper.params.slidesPerGroup);
@@ -141,6 +140,5 @@ const initNewsSlider = () => {
 };
 
 document.addEventListener('DOMContentLoaded', initNewsSlider);
-
 
 export { initNewsSlider };

@@ -33,7 +33,7 @@
 
     background-image: url("../../img/background/bg-form-mobile.jpg");
 
-    @media (resolution >=2dppx) {
+    @media (resolution >= 2dppx) {
       @supports (background-image: url("image.webp")) {
         background-image: url("../../img/background/bg-form-mobile@2x.webp");
       }
@@ -55,7 +55,7 @@
 
   background-image: url("../../img/background/bg-form-desktop.jpg");
 
-  @media (resolution >=2dppx) {
+  @media (resolution >= 2dppx) {
     @supports (background-image: url("image.webp")) {
       background-image: url("../../img/background/bg-form-desktop@2x.webp");
     }
@@ -70,7 +70,7 @@
 
     background-image: url("../../img/background/bg-form-tablet.jpg");
 
-    @media (resolution >=2dppx) {
+    @media (resolution >= 2dppx) {
       @supports (background-image: url("image.webp")) {
         background-image: url("../../img/background/bg-form-tablet@2x.webp");
       }
@@ -477,7 +477,6 @@
   &:hover {
     background-color: $color-action;
   }
-
 }
 
 .form__field--btn button {
