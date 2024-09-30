@@ -1,0 +1,433 @@
+.modal-form__head {
+  margin-bottom: 30px;
+
+  @include vp-767 {
+    margin-bottom: 25px;
+  }
+}
+
+.modal-form__title {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
+  text-align: center;
+  color: $color-action;
+
+  @include vp-1439 {
+    margin-bottom: 17px;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.modal-form__descr {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modal-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 20px;
+  font-size: 0;
+  line-height: 0;
+
+  @include vp-767 {
+    row-gap: 15px;
+  }
+}
+
+.modal-form__field {
+  width: 100%;
+}
+
+.modal-form__field--name,
+.modal-form__field--phone,
+.modal-form__field--cities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-form__field--name {}
+
+.modal-form__field--phone {}
+
+.modal-form__field--cities {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: 21px;
+    bottom: 18px;
+    pointer-events: none;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-dark;
+    width: 16px;
+    height: 16px;
+    mask-image: url("../__spritemap#sprite-icon-select-arrow-view");
+    mask-size: 16px 9px;
+    z-index: 1;
+    cursor: pointer;
+
+    @include vp-767 {
+      bottom: 14px;
+    }
+  }
+}
+
+.modal-form__field--consent {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-form__label {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba($color-dark, 0.8);
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 8px;
+    line-height: 14px;
+  }
+}
+
+.modal-form__field--consent .modal-form__label {
+  display: inline-block;
+  width: 100%;
+  padding-left: 30px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+  }
+
+  &::before {
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: -4px;
+    background-color: $color-action;
+    border-radius: 2px;
+    border: 1px solid $color-action;
+    transition: background-color $trans-default, border-color $trans-default;
+    z-index: 1;
+
+    @include vp-767 {
+      top: 5px;
+    }
+  }
+
+  &::after {
+    display: none;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-action;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 5px;
+    mask-image: url("../__spritemap#sprite-icon-checked-view");
+    mask-size: 10px 8px;
+    z-index: 2;
+  }
+
+  @include vp-767 {
+    line-height: 14px;
+  }
+}
+
+.modal-form__field--name input,
+.modal-form__field--phone input,
+.modal-form__field--cities select {
+  width: 100%;
+  background-color: $color-transparent;
+  padding: 0;
+  border: 1px solid rgba($color-dark, 0.3);
+  border-radius: 8px;
+  min-height: 50px;
+
+  @include vp-767 {
+    min-height: 44px;
+  }
+}
+
+.modal-form__field--btn {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include vp-767 {
+    justify-content: flex-start;
+  }
+}
+
+.modal-form__field--name input {}
+
+.modal-form__field--phone input {}
+
+.modal-form__field--cities select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.modal-form__field--cities option {
+  padding: 17px 20px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $color-dark;
+
+  &:hover {
+    background-color: $color-action;
+  }
+}
+
+.modal-form__field--consent input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.modal-form__field--consent input:focus:not(:checked) + .modal-form__label::before,
+.modal-form__field--consent input:focus-visible:not(:checked) + .modal-form__label::before,
+.modal-form__field--consent input:not(:checked):not(:disabled):not(:focus):not(:focus-visible) + .modal-form__label:hover::before {
+  border-color: $color-action;
+  background-color: $color-white;
+  transition: background-color $trans-default, border-color $trans-default;
+}
+
+.modal-form__field--consent input:disabled:not(:checked) + .modal-form__label::before {
+  border-color: $color-action;
+  background-color: rgba($color-action, 0.6);
+  cursor: not-allowed;
+}
+
+.modal-form__field--consent input:disabled:not(:checked) + .modal-form__label {
+  cursor: not-allowed;
+}
+
+.modal-form__field--consent.is-error input:not(:disabled):not(:checked) + .modal-form__label::before {
+  border-color: $color-error;
+  background-color: rgba($color-action, 0.7);
+}
+
+.modal-form__field--consent input:checked + .modal-form__label::before {
+  background-color: $color-action;
+  border-color: $color-action;
+}
+
+.modal-form__field--consent input:checked + .modal-form__label::after {
+  display: block;
+  background-color: $color-white;
+}
+
+.modal-form__field--consent input:focus:checked + .modal-form__label::before,
+.modal-form__field--consent input:focus-visible:checked + .modal-form__label::before,
+.modal-form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .modal-form__label:hover::before {
+  border-color: $color-action;
+  background-color: $color-white;
+  transition: background-color $trans-default, border-color $trans-default;
+}
+
+.modal-form__field--consent input:focus:checked + .modal-form__label::after,
+.modal-form__field--consent input:focus-visible:checked + .modal-form__label::after,
+.modal-form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .modal-form__label:hover::after {
+  background-color: $color-action;
+  transition: background-color $trans-default;
+}
+
+.modal-form__field--consent input:disabled:checked + .modal-form__label::before {
+  border-color: $color-disabled;
+  background-color: $color-disabled;
+  cursor: not-allowed;
+}
+
+.modal-form__field--consent input:disabled:checked + .modal-form__label::after {
+  background-color: rgba($color-white, 0.7);
+  cursor: not-allowed;
+}
+
+.modal-form__field--consent input:disabled:checked + .modal-form__label {
+  cursor: not-allowed;
+}
+
+.modal-form__field--btn button {
+  width: 100%;
+  max-width: 194px;
+  min-height: 54px;
+  padding: 3px;
+  padding-left: 29px;
+  border: 1px solid $color-action;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  background-color: $color-transparent;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-action;
+  cursor: pointer;
+  transition: background-color $trans-default, color $trans-default;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: $color-action;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    right: 3px;
+    top: 3px;
+    z-index: 1;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    @include vp-767 {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $color-white;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    right: 21px;
+    transform: translateY(-50%);
+    z-index: 2;
+    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
+    mask-size: 10px 10px;
+
+    @include vp-767 {
+      right: 15px;
+    }
+  }
+
+  @include vp-767 {
+    max-width: none;
+    min-height: 42px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+
+.modal-form__field--btn span {
+  @include vp-767 {
+    width: 100%;
+    max-width: 162px;
+  }
+
+}
+
+.modal-form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active) {
+  background: $color-action;
+  color: $color-white;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.modal-form__field--btn button:active:not(:disabled) {
+  color: rgba($color-white, 0.7);
+  background: $color-action;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.modal-form__field--btn button:focus::before,
+.modal-form__field--btn button:focus-visible::before {
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default;
+}
+
+
+.modal-form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::after {
+  background: $color-white;
+  transition: background-color $trans-default;
+}
+
+.modal-form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::before {
+  background: $color-action;
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.modal-form__field--btn button:active:not(:disabled)::after {
+  background: $color-white;
+  transition: background-color $trans-default;
+}
+
+.modal-form__field--btn button:active:not(:disabled)::before {
+  background: rgba($color-action, 0.7);
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.modal-form__field--btn button:disabled {
+  pointer-events: none;
+  color: $color-disabled;
+  border-color: $color-disabled;
+}
+
+.modal-form__field--btn button:disabled::after {
+  background-color: $color-disabled;
+}
+
+.modal-form__field--btn button:disabled::before {
+  background-color: rgba($color-white, 0.6);
+}

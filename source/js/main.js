@@ -1,6 +1,7 @@
 import { lazyLoadImages, removeFocusAfterClick } from '../js/modules/utils/utils';
 import { initBurgerMenu } from '../js/modules/burger-menu';
 import { initHeroSlider } from '../js/modules/sliders/hero-slider';
+import { openModalWindow } from '../js/modules/open-modal';
 import { initProgramsSlider } from '../js/modules/sliders/programs-slider';
 import { initReviewsSlider } from '../js/modules/sliders/reviews-slider';
 import { initNewsTabs } from '../js/modules/tabs/init-news-tabs';
@@ -13,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
 
   window.addEventListener('load', () => {
+    openModalWindow();
     removeFocusAfterClick();
     initProgramsSlider();
     initReviewsSlider();

@@ -1,25 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalOverlay = document.getElementById('modal-overlay');
+const openModalWindow = () => {
+  const modal = document.querySelector('.modal');
+  const overlay = document.querySelector('.overlay');
   const openModalBtn = document.querySelector('.about__link');
-  const closeModalBtn = document.getElementById('modal-close');
-  const modalForm = document.getElementById('modal-form');
+  const closeModalBtn = modal.querySelector('.modal__btn-close');
+  const modalForm = modal.querySelector('.modal-form form');
 
   const openModal = () => {
-    modal.style.display = 'block';
-    modalOverlay.style.display = 'block';
+    modal.classList.add('modal--is-open');
+    overlay.classList.add('is-visible');
     document.body.classList.add('no-scroll');
   };
 
   const closeModal = () => {
-    modal.style.display = 'none';
-    modalOverlay.style.display = 'none';
+    modal.classList.remove('modal--is-open');
+    overlay.classList.remove('is-visible');
     document.body.classList.remove('no-scroll');
   };
 
   openModalBtn.addEventListener('click', openModal);
   closeModalBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -27,8 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  modalForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  modalForm.addEventListener('submit', () => {
     closeModal();
   });
-});
+};
+
+export { openModalWindow };
