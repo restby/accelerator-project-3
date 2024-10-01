@@ -1,4 +1,3 @@
-// validation.js
 const validateForms = () => {
   const forms = document.querySelectorAll('form');
 
@@ -25,26 +24,34 @@ const validateForms = () => {
     // Валидация имени
     nameInput.addEventListener('input', () => {
       const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
-      if (!namePattern.test(nameInput.value)) {
+      if (nameInput.value.trim() === "") {
+        nameInput.setCustomValidity("Имя не может быть пустым.");
+        nameInput.parentElement.classList.add('is-error');
+      } else if (!namePattern.test(nameInput.value)) {
         nameInput.setCustomValidity("Имя должно содержать только буквы.");
-        nameInput.classList.add('is-error');
+        nameInput.parentElement.classList.add('is-error');
       } else {
         nameInput.setCustomValidity("");
-        nameInput.classList.remove('is-error');
+        nameInput.parentElement.classList.remove('is-error');
       }
     });
+
 
     // Валидация телефона
     phoneInput.addEventListener('input', () => {
       const phonePattern = /^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/;
-      if (!phonePattern.test(phoneInput.value)) {
+      if (phoneInput.value.trim() === "") {
+        phoneInput.setCustomValidity("Номер телефона не может быть пустым.");
+        phoneInput.parentElement.classList.add('is-error');
+      } else if (!phonePattern.test(phoneInput.value)) {
         phoneInput.setCustomValidity("Введите корректный номер телефона в формате +7 123 456 78 90.");
-        phoneInput.classList.add('is-error');
+        phoneInput.parentElement.classList.add('is-error');
       } else {
         phoneInput.setCustomValidity("");
-        phoneInput.classList.remove('is-error');
+        phoneInput.parentElement.classList.remove('is-error');
       }
     });
+
 
     // Валидация чекбокса
     consentInput.addEventListener('change', () => {
@@ -66,13 +73,13 @@ const validateForms = () => {
         });
       } else {
         form.querySelectorAll('.is-error').forEach((element) => {
-          element.classList.remove('is-error');
+          element.parentElement.classList.remove('is-error');
         });
       }
     });
 
     // Удаление состояния ошибки при изменении
-    form.querySelectorAll('input, textarea').forEach((input) => {
+    form.querySelectorAll('input').forEach((input) => {
       input.addEventListener('input', () => {
         if (input.validity.valid) {
           input.parentElement.classList.remove('is-error');
