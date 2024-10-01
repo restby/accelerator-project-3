@@ -1,78 +1,40 @@
-.modal-form__head {
-  margin-bottom: 30px;
+.form {}
 
-  @include vp-767 {
-    margin-bottom: 25px;
-  }
+.form__head {
+  &--main {}
+
+  &--modal {}
 }
 
-.modal-form__title {
-  margin: 0;
-  margin-bottom: 14px;
-  font-size: 32px;
-  line-height: 36px;
-  font-weight: 400;
-  text-align: center;
-  color: $color-action;
+.form__title {
+  &--main {}
 
-  @include vp-1439 {
-    margin-bottom: 17px;
-    font-size: 28px;
-    line-height: 28px;
-  }
-
-  @include vp-767 {
-    margin-bottom: 12px;
-    font-size: 18px;
-    line-height: 18px;
-  }
+  &--modal {}
 }
 
-.modal-form__descr {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
-  text-align: center;
+.form__descr {
+  &--main {}
 
-  @include vp-1439 {
-    line-height: 20px;
-  }
-
-  @include vp-767 {
-    font-size: 14px;
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  &--modal {}
 }
 
-.modal-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 20px;
-  font-size: 0;
-  line-height: 0;
+.form--main form {}
 
-  @include vp-767 {
-    row-gap: 15px;
-  }
+.form--modal form {}
+
+.form__field {
+  &--main {}
+
+  &--modal {}
 }
 
-.modal-form__field {
-  width: 100%;
-}
-
-.modal-form__field--name,
-.modal-form__field--phone,
-.modal-form__field--cities {
+.form--modal .form__field:not(.form__field--consent):not(.form__field--btn) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.modal-form__field--cities {
+.form--modal .form__field--cities {
   position: relative;
 
   &::after {
@@ -97,13 +59,13 @@
   }
 }
 
-.modal-form__field--consent {
+.form--modal .form__field--consent {
   min-height: 20px;
   display: flex;
   align-items: center;
 }
 
-.modal-form__label {
+.form--modal .form__label {
   margin-bottom: 12px;
   font-size: 14px;
   line-height: 18px;
@@ -120,7 +82,7 @@
   }
 }
 
-.modal-form__field--consent .modal-form__label {
+.form--modal .form__label--consent {
   display: inline-block;
   width: 100%;
   padding-left: 30px;
@@ -172,9 +134,8 @@
   }
 }
 
-.modal-form__field--name input,
-.modal-form__field--phone input,
-.modal-form__field--cities select {
+.form__field--modal:not(.form__field--consent) input,
+.form__field--modal select {
   width: 100%;
   background-color: $color-transparent;
   padding: 0;
@@ -193,45 +154,45 @@
   }
 }
 
-.modal-form__field:not(.modal-form__field--consent) input:focus,
-.modal-form__field:not(.modal-form__field--consent) input:focus-visible,
-.modal-form__field:not(.modal-form__field--consent) input:hover,
-.modal-form__field:not(.modal-form__field--consent) input:active,
-.modal-form__field:not(.modal-form__field--consent) select:focus,
-.modal-form__field:not(.modal-form__field--consent) select:focus-visible,
-.modal-form__field:not(.modal-form__field--consent) select:hover,
-.modal-form__field:not(.modal-form__field--consent) select:active {
+.form__field--modal:not(.form__field--consent) input:focus,
+.form__field--modal:not(.form__field--consent) input:focus-visible,
+.form__field--modal:not(.form__field--consent) input:hover,
+.form__field--modal:not(.form__field--consent) input:active,
+.form__field--modal select:focus,
+.form__field--modal select:focus-visible,
+.form__field--modal select:hover,
+.form__field--modal select:active {
   border-color: $color-dark;
   transition: border-color $trans-default;
 }
 
-.modal-form__field:not(.modal-form__field--consent):has(input:focus) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(input:focus-visible) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(input:hover) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(input:active) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(select:focus) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(select:focus-visible) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(select:hover) .modal-form__label,
-.modal-form__field:not(.modal-form__field--consent):has(select:active) .modal-form__label {
+.form__field--modal:not(.form__field--consent):has(input:focus) .form__label,
+.form__field--modal:not(.form__field--consent):has(input:focus-visible) .form__label,
+.form__field--modal:not(.form__field--consent):has(input:hover) .form__label,
+.form__field--modal:not(.form__field--consent):has(input:active) .form__label,
+.form__field--modal:has(select:focus) .form__label,
+.form__field--modal:has(select:focus-visible) .form__label,
+.form__field--modal:has(select:hover) .form__label,
+.form__field--modal:has(select:active) .form__label {
   color: $color-dark;
   transition: color $trans-default;
 }
 
-.modal-form__field:not(.modal-form__field--consent) input:disabled {
+.form__field--modal:not(.form__field--consent) input:disabled {
   border-color: rgba($color-disabled, 0.5);
   background-color: rgba($color-disabled, 0.2);
 }
 
-.modal-form__field:not(.modal-form__field--consent):has(select:disabled) .modal-form__label {
+.form__field--modal:not(.form__field--consent):has(select:disabled) .form__label {
   color: rgba($color-dark, 0.6);
 }
 
-.modal-form__field:not(.modal-form__field--consent).is-error input {
+.form__field--modal:not(.form__field--consent).is-error input {
   border-color: $color-error;
   background-color: rgba($color-error, 0.2);
 }
 
-.modal-form__field--btn {
+.form--modal .form__field--btn {
   margin-top: 10px;
   display: flex;
   align-items: flex-start;
@@ -242,12 +203,12 @@
   }
 }
 
-.modal-form__field--cities select {
+.form__field--modal.form__field--cities select {
   appearance: none;
   cursor: pointer;
 }
 
-.modal-form__field--consent input {
+.form__field--modal.form__field--consent input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -260,70 +221,70 @@
   clip-path: inset(100%);
 }
 
-.modal-form__field--consent input:focus:not(:checked) + .modal-form__label::before,
-.modal-form__field--consent input:focus-visible:not(:checked) + .modal-form__label::before,
-.modal-form__field--consent input:not(:checked):not(:disabled):not(:focus):not(:focus-visible) + .modal-form__label:hover::before {
+.form__field--modal.form__field--consent input:focus:not(:checked) + .form__label::before,
+.form__field--modal.form__field--consent input:focus-visible:not(:checked) + .form__label::before,
+.form__field--modal.form__field--consent input:not(:checked):not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::before {
   border-color: $color-action;
   background-color: $color-white;
   transition: background-color $trans-default, border-color $trans-default;
 }
 
-.modal-form__field--consent input:disabled:not(:checked) + .modal-form__label::before {
+.form__field--modal.form__field--consent input:disabled:not(:checked) + .form__label::before {
   border-color: $color-action;
   background-color: rgba($color-action, 0.6);
   cursor: not-allowed;
 }
 
-.modal-form__field--consent input:disabled:not(:checked) + .modal-form__label {
+.form__field--modal.form__field--consent input:disabled:not(:checked) + .form__label {
   cursor: not-allowed;
 }
 
-.modal-form__field--consent.is-error input:not(:disabled):not(:checked) + .modal-form__label::before {
+.form__field--modal.form__field--consent.is-error input:not(:disabled):not(:checked) + .form__label::before {
   border-color: $color-error;
   background-color: rgba($color-action, 0.7);
 }
 
-.modal-form__field--consent input:checked + .modal-form__label::before {
+.form__field--modal.form__field--consent input:checked + .form__label::before {
   background-color: $color-action;
   border-color: $color-action;
 }
 
-.modal-form__field--consent input:checked + .modal-form__label::after {
+.form__field--modal.form__field--consent input:checked + .form__label::after {
   display: block;
   background-color: $color-white;
 }
 
-.modal-form__field--consent input:focus:checked + .modal-form__label::before,
-.modal-form__field--consent input:focus-visible:checked + .modal-form__label::before,
-.modal-form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .modal-form__label:hover::before {
+.form__field--modal.form__field--consent input:focus:checked + .form__label::before,
+.form__field--modal.form__field--consent input:focus-visible:checked + .form__label::before,
+.form__field--modal.form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::before {
   border-color: $color-action;
   background-color: $color-white;
   transition: background-color $trans-default, border-color $trans-default;
 }
 
-.modal-form__field--consent input:focus:checked + .modal-form__label::after,
-.modal-form__field--consent input:focus-visible:checked + .modal-form__label::after,
-.modal-form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .modal-form__label:hover::after {
+.form__field--modal.form__field--consent input:focus:checked + .form__label::after,
+.form__field--modal.form__field--consent input:focus-visible:checked + .form__label::after,
+.form__field--modal.form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::after {
   background-color: $color-action;
   transition: background-color $trans-default;
 }
 
-.modal-form__field--consent input:disabled:checked + .modal-form__label::before {
+.form__field--modal.form__field--consent input:disabled:checked + .form__label::before {
   border-color: $color-disabled;
   background-color: $color-disabled;
   cursor: not-allowed;
 }
 
-.modal-form__field--consent input:disabled:checked + .modal-form__label::after {
+.form__field--modal.form__field--consent input:disabled:checked + .form__label::after {
   background-color: rgba($color-white, 0.7);
   cursor: not-allowed;
 }
 
-.modal-form__field--consent input:disabled:checked + .modal-form__label {
+.form__field--modal.form__field--consent input:disabled:checked + .form__label {
   cursor: not-allowed;
 }
 
-.modal-form__field--btn button {
+.form__field--modal.form__field--btn button {
   width: 100%;
   max-width: 194px;
   min-height: 54px;
@@ -390,75 +351,68 @@
   }
 }
 
-// .modal-form__field--btn span {
-//   @include vp-767 {
-//     width: 100%;
-//     max-width: 162px;
-//   }
-// }
-
-.modal-form__field--btn span {
+.form__field--modal.form__field--btn span {
   width: 100%;
 
   @include vp-767 {
     max-width: 162px;
   }
+
 }
 
-.modal-form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active) {
+.form__field--modal.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active) {
   background: $color-action;
   color: $color-white;
   transition: background-color $trans-default, color $trans-default;
 }
 
-.modal-form__field--btn button:active:not(:disabled) {
+.form__field--modal.form__field--btn button:active:not(:disabled) {
   color: rgba($color-white, 0.7);
   background: $color-action;
   transition: background-color $trans-default, color $trans-default;
 }
 
-.modal-form__field--btn button:focus::before,
-.modal-form__field--btn button:focus-visible::before {
+.form__field--modal.form__field--btn button:focus::before,
+.form__field--modal.form__field--btn button:focus-visible::before {
   transform: rotate(45deg) translateX(-4px) translateY(-4px);
   transform-origin: center center;
   transition: transform $trans-default;
 }
 
-
-.modal-form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::after {
-  background: $color-white;
-  transition: background-color $trans-default;
-}
-
-.modal-form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::before {
+.form__field--modal.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::before {
   background: $color-action;
   transform: rotate(45deg) translateX(-4px) translateY(-4px);
   transform-origin: center center;
   transition: transform $trans-default, background-color $trans-default;
 }
 
-.modal-form__field--btn button:active:not(:disabled)::after {
+.form__field--modal.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::after {
   background: $color-white;
   transition: background-color $trans-default;
 }
 
-.modal-form__field--btn button:active:not(:disabled)::before {
+.form__field--modal.form__field--btn button:active:not(:disabled)::before {
   background: rgba($color-action, 0.7);
   transform: rotate(45deg) translateX(-4px) translateY(-4px);
   transform-origin: center center;
   transition: transform $trans-default, background-color $trans-default;
 }
 
-.modal-form__field--btn button:disabled {
-  pointer-events: none;
-  color: $color-disabled;
-  border-color: $color-disabled;
+.form__field--modal.form__field--btn button:active:not(:disabled)::after {
+  background: $color-white;
+  transition: background-color $trans-default;
 }
 
-.modal-form__field--btn button:disabled::after {
+.form__field--modal.form__field--btn button:disabled::before {
+  background-color: rgba($color-white, 0.6);
+}
+
+.form__field--modal.form__field--btn button:disabled::after {
   background-color: $color-disabled;
 }
 
-.modal-form__field--btn button:disabled::before {
-  background-color: rgba($color-white, 0.6);
+.form__field--modal.form__field--btn button:disabled {
+  pointer-events: none;
+  color: $color-disabled;
+  border-color: $color-disabled;
 }

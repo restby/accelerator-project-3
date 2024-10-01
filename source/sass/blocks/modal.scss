@@ -44,6 +44,8 @@
   padding: 0;
   border: none;
   cursor: pointer;
+  transition: background-color $trans-default;
+
 
   &::before {
     position: absolute;
@@ -65,6 +67,30 @@
       height: 12px;
       mask-size: 12px 12px;
     }
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    background-color: $color-action;
+    transition: background-color $trans-default;
+  }
+
+  &:focus::before,
+  &:focus-visible::before,
+  &:hover::before {
+    background-color: $color-white;
+    transition: background-color $trans-default;
+  }
+
+  &:active {
+    background-color: rgba($color-white, 0.5);
+    transition: background-color $trans-default;
+  }
+
+  &:active::before {
+    background-color: rgba($color-action, 0.5);
+    transition: background-color $trans-default;
   }
 
   @include vp-767 {
