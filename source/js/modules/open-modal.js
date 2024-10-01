@@ -1,9 +1,9 @@
+// open-modal.js
 const openModalWindow = () => {
   const modal = document.querySelector('.modal');
   const overlay = document.querySelector('.overlay');
   const openModalBtn = document.querySelector('.about__link');
   const closeModalBtn = modal.querySelector('.modal__btn-close');
-  const modalForm = modal.querySelector('.modal-form form');
 
   const openModal = () => {
     modal.classList.add('modal--is-open');
@@ -27,8 +27,13 @@ const openModalWindow = () => {
     }
   });
 
-  modalForm.addEventListener('submit', () => {
-    closeModal();
+  // Закрытие модального окна после успешной отправки формы
+  document.querySelectorAll('.modal form').forEach(form => {
+    form.addEventListener('submit', (event) => {
+      if (form.checkValidity()) {
+        closeModal();
+      }
+    });
   });
 };
 

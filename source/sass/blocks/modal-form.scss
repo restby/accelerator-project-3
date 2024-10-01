@@ -72,10 +72,6 @@
   align-items: flex-start;
 }
 
-.modal-form__field--name {}
-
-.modal-form__field--phone {}
-
 .modal-form__field--cities {
   position: relative;
 
@@ -185,10 +181,55 @@
   border: 1px solid rgba($color-dark, 0.3);
   border-radius: 8px;
   min-height: 50px;
+  color: $color-dark;
+  transition: border-color $trans-default;
+  font-size: 14px;
+  line-height: 14px;
+  padding-left: 24px;
+  padding-right: 24px;
 
   @include vp-767 {
     min-height: 44px;
   }
+}
+
+.modal-form__field:not(.modal-form__field--consent) input:focus,
+.modal-form__field:not(.modal-form__field--consent) input:focus-visible,
+.modal-form__field:not(.modal-form__field--consent) input:active,
+.modal-form__field:not(.modal-form__field--consent) input:hover,
+.modal-form__field:not(.modal-form__field--consent) select:focus,
+.modal-form__field:not(.modal-form__field--consent) select:focus-visible,
+.modal-form__field:not(.modal-form__field--consent) select:active,
+.modal-form__field:not(.modal-form__field--consent) select:hover {
+  border-color: $color-dark;
+  transition: border-color $trans-default;
+}
+
+.modal-form__field:not(.modal-form__field--consent):has(input:focus) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(input:focus-visible) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(input:active) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(input:hover) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(select:focus) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(select:focus-visible) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(select:active) .modal-form__label,
+.modal-form__field:not(.modal-form__field--consent):has(select:hover) .modal-form__label {
+  color: $color-dark;
+  transition: color $trans-default;
+}
+
+.modal-form__field:not(.modal-form__field--consent) input:disabled {
+  border-color: rgba($color-disabled, 0.5);
+  background-color: rgba($color-disabled, 0.2);
+}
+
+.modal-form__field:not(.modal-form__field--consent):has(select:disabled) .modal-form__label {
+  color: rgba($color-dark, 0.6);
+}
+
+.modal-form__field:not(.modal-form__field--consent).is-error input,
+.modal-form__field:not(.modal-form__field--consent) input:invalid {
+  border-color: $color-error;
+  background-color: rgba($color-error, 0.2);
 }
 
 .modal-form__field--btn {
@@ -202,25 +243,9 @@
   }
 }
 
-.modal-form__field--name input {}
-
-.modal-form__field--phone input {}
-
 .modal-form__field--cities select {
   appearance: none;
   cursor: pointer;
-}
-
-.modal-form__field--cities option {
-  padding: 17px 20px;
-  font-size: 14px;
-  line-height: 14px;
-  font-weight: 400;
-  color: $color-dark;
-
-  &:hover {
-    background-color: $color-action;
-  }
 }
 
 .modal-form__field--consent input {
@@ -254,7 +279,8 @@
   cursor: not-allowed;
 }
 
-.modal-form__field--consent.is-error input:not(:disabled):not(:checked) + .modal-form__label::before {
+.modal-form__field--consent.is-error input:not(:disabled):not(:checked) + .modal-form__label::before,
+.modal-form__field--consent input:invalid:not(:disabled):not(:checked) + .modal-form__label::before {
   border-color: $color-error;
   background-color: rgba($color-action, 0.7);
 }
