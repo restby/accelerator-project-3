@@ -9,6 +9,23 @@ const lazyLoadImages = () => {
   }
 };
 
+const setTopheroPagination = () => {
+  const heroContainer = document.querySelector('.hero__container');
+  const heroSlideContent = document.querySelector('.hero-slide__content');
+
+  if (heroContainer && heroSlideContent) {
+    const heroSlideContentRect = heroSlideContent.getBoundingClientRect();
+    const heroContainerRect = heroContainer.getBoundingClientRect();
+
+    // Вычисляем разницу между нижней координатой hero__container и верхней координатой hero-slide
+    const offset = heroSlideContentRect.top - heroContainerRect.bottom;
+
+    // Устанавливаем свойство top для hero__container
+    heroContainer.style.position = 'relative';
+    heroContainer.style.top = `${offset + 58}px`;
+  }
+};
+
 const removeFocusAfterClick = () => {
   const buttons = document.querySelectorAll('button');
 
@@ -50,4 +67,4 @@ const stylengSelectArrows = () => {
 };
 
 
-export { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows };
+export { lazyLoadImages, setTopheroPagination, removeFocusAfterClick, stylengSelectArrows };

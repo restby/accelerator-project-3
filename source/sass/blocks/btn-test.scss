@@ -1,0 +1,213 @@
+.btn {
+  width: 100%;
+  min-height: 56px;
+  border-radius: 30px;
+  display: flex;
+  align-items: flex-start;
+  background-color: $color-transparent;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  color: $color-action;
+  text-transform: uppercase;
+
+  transition: background-color $trans-default, color $trans-default;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 46px;
+    height: 46px;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 50%;
+    background-color: $color-action;
+    transition: background-color $trans-default;
+
+    @include vp-767 {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: $color-white;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 8px 8px;
+    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
+    transition: background-color $trans-default;
+
+    @include vp-1439 {
+      right: 17px;
+    }
+  }
+
+  @include vp-767 {
+    min-height: 44px;
+    padding-left: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.24px;
+  }
+}
+
+.btn--menu {
+  padding-left: 20px;
+
+  @include vp-1439 {
+    min-height: 56px;
+  }
+
+  @include vp-767 {
+    min-height: 54px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.28px;
+  }
+}
+
+.btn--menu::before {
+  @include vp-767 {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.btn--menu::after {
+  right: 19px;
+  width: 16px;
+  height: 8px;
+  mask-size: 16px 8px;
+  mask-image: url("../__spritemap#sprite-icon-menu-view");
+}
+
+.btn--hero {
+  min-height: 58px;
+
+  @include vp-1439 {
+    min-height: 56px;
+  }
+
+  @include vp-767 {
+    min-height: 44px;
+  }
+}
+
+.btn--hero::before {
+  right: 5px;
+
+  @include vp-1439 {
+    right: 4px;
+  }
+}
+
+.btn--hero::after {
+  right: 24px;
+
+  @include vp-1439 {
+    right: 23px;
+  }
+
+  @include vp-1439 {
+    right: 17px;
+  }
+}
+
+.btn--link {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+
+  @include vp-1439 {
+    padding: 0;
+  }
+
+  min-height: 30px;
+}
+
+.btn--link::before {
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translateY(0);
+}
+
+.btn--link::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn:not(.disabled):focus::after,
+.btn:not(.disabled):focus-visible::after {
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default;
+}
+
+.btn:hover:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active) {
+  background-color: $color-action;
+  color: $color-white;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.btn:hover:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active)::before {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn:hover:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active)::after {
+  background-color: $color-action;
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.btn:not(.disabled):active {
+  color: rgba($color-white, 0.7);
+  background-color: $color-action;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.btn:not(.disabled):active::before {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn:not(.disabled):active::after {
+  background-color: rgba($color-action, 0.7);
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.btn.disabled {
+  background-color: $color-transparent;
+  border-color: $color-disabled;
+  color: $color-disabled;
+  pointer-events: none;
+}
+
+.btn.disabled::before {
+  background-color: $color-disabled;
+}
+
+.btn.disabled::after {
+  background-color: rgba($color-white, 0.6);
+}
