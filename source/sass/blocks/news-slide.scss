@@ -249,31 +249,8 @@
 }
 
 .news-slide__btn {
-  width: 30px;
-  height: 30px;
-  background-color: $color-action;
-  border-radius: 50%;
-  position: relative;
   flex-shrink: 0;
-  transition: background-color $trans-default;
-
   margin-top: 4px;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: $color-white;
-    transition: background-color $trans-default;
-    width: 8px;
-    height: 8px;
-    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
-    mask-size: 8px 8px;
-  }
 
   @include vp-1439 {
     margin-top: 0;
@@ -282,42 +259,6 @@
   @include vp-767 {
     margin-bottom: 1px;
   }
-}
-
-.news-slide__btn:hover:not(.disabled):not(:focus-visible):not(:active) {
-  background-color: $color-action;
-  transition: background-color $trans-default;
-}
-
-.news-slide__btn:active {
-  background-color: $color-action;
-  transition: background-color $trans-default, opacity $trans-default;
-  opacity: 0.7;
-}
-
-.news-slide__btn:focus::after,
-.news-slide__btn:focus-visible::after {
-  transform: rotate(45deg) translateX(-4px);
-  transform-origin: center center;
-}
-
-.news-slide__btn.disabled {
-  pointer-events: none;
-  border-color: $color-disabled;
-}
-
-.news-slide__btn:hover:not(.disabled):not(:focus):not(:focus-visible):not(:active),
-.news-slide__btn:active {
-  background-color: $color-white;
-  transition: background-color $trans-default;
-}
-
-.news-slide__btn:hover:not(.disabled):not(:focus):not(:focus-visible):not(:active)::after,
-.news-slide__btn:active::after {
-  background-color: $color-action;
-  transform: rotate(45deg) translateX(-4px);
-  transform-origin: center center;
-  transition: background-color $trans-default;
 }
 
 .news-tab__navigation {

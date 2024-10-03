@@ -17,10 +17,8 @@ const setTopheroPagination = () => {
     const heroSlideContentRect = heroSlideContent.getBoundingClientRect();
     const heroContainerRect = heroContainer.getBoundingClientRect();
 
-    // Вычисляем разницу между нижней координатой hero__container и верхней координатой hero-slide
     const offset = heroSlideContentRect.top - heroContainerRect.bottom;
 
-    // Устанавливаем свойство top для hero__container
     heroContainer.style.position = 'relative';
     heroContainer.style.top = `${offset + 58}px`;
   }
@@ -35,9 +33,6 @@ const removeFocusAfterClick = () => {
         setTimeout(() => {
           button.blur();
         }, 100);
-        // setTimeout(() => {
-        //   button.classList.add('is-active');
-        // }, 400);
       });
     });
   }

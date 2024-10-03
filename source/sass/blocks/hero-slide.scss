@@ -3,7 +3,6 @@
   position: relative;
   height: auto;
   min-height: 800px;
-  // padding-top: 433px;
   background-color: $color-action;
   display: flex;
   flex-direction: column;
@@ -22,11 +21,9 @@
 
   @include vp-1439 {
     min-height: 1024px;
-    // padding-top: 687px;
   }
 
   @include vp-767 {
-    // padding-top: 229px;
     min-height: 568px;
     padding-bottom: 20px;
   }
@@ -155,11 +152,9 @@
   &--link {
     width: 100%;
     max-width: 279px;
-    //
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    //
     padding-bottom: 35px;
     padding-left: 30px;
     padding-top: 10px;

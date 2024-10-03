@@ -66,8 +66,8 @@ const initNewsSlider = () => {
       },
     },
     watchOverflow: true,
-    simulateTouch: true,
-    grabCursor: true,
+    simulateTouch: false,
+    grabCursor: false,
     speed: 500,
     loop: false,
     breakpoints: {
