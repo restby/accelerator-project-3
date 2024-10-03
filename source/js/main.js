@@ -1,4 +1,4 @@
-import { lazyLoadImages, removeFocusAfterClick } from '../js/modules/utils/utils';
+import { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows } from '../js/modules/utils/utils';
 import { initBurgerMenu } from '../js/modules/burger-menu';
 import { validateForms } from './modules/validate-forms';
 import { initHeroSlider } from '../js/modules/sliders/hero-slider';
@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     validateForms();
     openModalWindow();
+    stylengSelectArrows();
     removeFocusAfterClick();
     initProgramsSlider();
     initReviewsSlider();
