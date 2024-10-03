@@ -7,6 +7,10 @@
   z-index: 3;
   width: 100%;
   padding-top: 30px;
+
+  @include vp-767 {
+    padding-top: 20px;
+  }
 }
 
 .page-header__container {
@@ -17,6 +21,7 @@
 }
 
 .page-header__logo {
+  // flex-shrink: 0;
   width: 52px;
   height: 52px;
   padding-top: 2px;
