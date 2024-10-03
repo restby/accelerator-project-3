@@ -932,29 +932,29 @@
           </div>
         </div>
       </section>
-      <section class="form" data-test="form">
+      <section class="form form--main" data-test="form">
         <div class="container">
           <div class="form__container">
             <div class="form__wrapper">
               <div class="form__head">
-                <h2 class="form__title section-title">Напишите нам</h2>
-                <p>Оставьте ваши контакты, если у вас остались
+                <h2 class="form__title">Напишите нам</h2>
+                <p class="form__descr">Оставьте ваши контакты, если у вас остались
                   вопросы — мы на них ответим!</p>
               </div>
               <form action="https://echo.htmlacademy.ru" method="POST">
-                <div class="form__field form__field--name">
+                <div class="form__field form__field--main form__field--name">
                   <label class="form__label" for="name">Имя</label>
                   <input type="text" id="name" name="name" autocomplete="on" required>
                 </div>
-                <div class="form__field form__field--phone">
+                <div class="form__field form__field--main form__field--phone">
                   <label class="form__label" for="phone">Телефон</label>
                   <input type="tel" id="phone" name="phone" autocomplete="on" required>
                 </div>
-                <div class="form__field form__field--message">
+                <div class="form__field form__field--main form__field--message">
                   <label class="form__label" for="message">Ваше сообщение</label>
                   <textarea name="message" id="message" cols="1" rows="1"></textarea>
                 </div>
-                <div class="form__field form__field--cities">
+                <div class="form__field form__field--main form__field--cities">
                   <label class="form__label" for="cities">Выберите город</label>
                   <select name="cities" id="cities">
                     <option value="" disabled selected>&nbsp;</option>
@@ -965,12 +965,12 @@
                     <option value="saint-petersburg">Санкт-Петербург</option>
                   </select>
                 </div>
-                <div class="form__field form__field--consent">
+                <div class="form__field form__field--main form__field--consent">
                   <input type="checkbox" name="consent" id="consent" required>
                   <label class="form__label" for="consent">Я согласен на обработку моих персональных <br>данных</label>
                 </div>
-                <div class="form__field form__field--btn">
-                  <button type="submit"><b>Отправить</b><span></span></button>
+                <div class="form__field form__field--main form__field--btn">
+                  <button type="submit"><span>Отправить</span></button>
                 </div>
               </form>
             </div>
@@ -1037,23 +1037,23 @@
 
     <div class="modal">
       <button class="modal__btn-close" type="button"><span class="visually-hidden">закрыть</span></button>
-      <div class="modal-form">
-        <div class="modal-form__head">
-          <h2 class="modal-form__title">Напишите нам</h2>
-          <p class="modal-form__descr">Оставьте ваши контакты, если у вас остались
+      <div class="form form--modal">
+        <div class="form__head">
+          <h2 class="form__title">Напишите нам</h2>
+          <p class="form__descr">Оставьте ваши контакты, если у вас остались
             вопросы — мы на них ответим!</p>
         </div>
         <form action="https://echo.htmlacademy.ru" method="POST">
-          <div class="modal-form__field modal-form__field--name">
-            <label class="modal-form__label" for="modal-name">Имя</label>
+          <div class="form__field form__field--modal form__field--name">
+            <label class="form__label" for="modal-name">Имя</label>
             <input type="text" id="modal-name" name="name" autocomplete="on" required>
           </div>
-          <div class="modal-form__field modal-form__field--phone">
-            <label class="modal-form__label" for="modal-phone">Телефон</label>
+          <div class="form__field form__field--modal form__field--phone">
+            <label class="form__label" for="modal-phone">Телефон</label>
             <input type="tel" id="modal-phone" name="phone" autocomplete="on" required>
           </div>
-          <div class="modal-form__field modal-form__field--cities">
-            <label class="modal-form__label" for="modal-cities">Выберите город</label>
+          <div class="form__field form__field--modal form__field--cities">
+            <label class="form__label" for="modal-cities">Выберите город</label>
             <select name="cities" id="modal-cities">
               <option value="" disabled selected>&nbsp;</option>
               <option value="saint-petersburg">Санкт-Петербург</option>
@@ -1063,12 +1063,12 @@
               <option value="saint-petersburg">Санкт-Петербург</option>
             </select>
           </div>
-          <div class="modal-form__field modal-form__field--consent">
+          <div class="form__field form__field--modal form__field--consent">
             <input type="checkbox" name="consent" id="modal-consent" required>
-            <label class="modal-form__label" for="modal-consent">Я согласен на обработку моих персональных
+            <label class="form__label" for="modal-consent">Я согласен на обработку моих персональных
               данных</label>
           </div>
-          <div class="modal-form__field modal-form__field--btn">
+          <div class="form__field form__field--modal form__field--btn">
             <button type="submit"><span>Отправить</span></button>
           </div>
         </form>

@@ -43,10 +43,6 @@
     }
   }
 
-  // &--form {
-  //   border-color: $color-white;
-  // }
-
   @include vp-767 {
     min-height: 44px;
   }
@@ -72,9 +68,6 @@
   }
 }
 
-// .btn--form b {
-//   color: $color-white;
-// }
 
 .btn span:not(.visually-hidden) {
   background-color: $color-action;
@@ -104,9 +97,6 @@
   }
 }
 
-// .btn.btn--form span {
-//   background-color: $color-white;
-// }
 
 .btn--form span::after {
   background-color: $color-action;

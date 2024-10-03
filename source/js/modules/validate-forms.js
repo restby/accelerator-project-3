@@ -6,14 +6,13 @@ const validateForms = () => {
     const phoneInput = form.querySelector('input[name="phone"]');
     const consentInput = form.querySelector('input[name="consent"]');
 
-    // Маска для телефона
     const applyPhoneMask = (input) => {
       input.addEventListener('input', () => {
         let value = input.value.replace(/\D/g, '');
         if (value.startsWith('7')) {
-          value = `+${ value}`;
+          value = `+${value}`;
         } else {
-          value = `+7${ value}`;
+          value = `+7${value}`;
         }
         input.value = value.replace(/(\+7)(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5').trim();
       });
@@ -21,7 +20,6 @@ const validateForms = () => {
 
     applyPhoneMask(phoneInput);
 
-    // Валидация имени
     nameInput.addEventListener('input', () => {
       const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
       if (nameInput.value.trim() === '') {
@@ -36,8 +34,6 @@ const validateForms = () => {
       }
     });
 
-
-    // Валидация телефона
     phoneInput.addEventListener('input', () => {
       const phonePattern = /^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/;
       if (phoneInput.value.trim() === '') {
@@ -52,8 +48,6 @@ const validateForms = () => {
       }
     });
 
-
-    // Валидация чекбокса
     consentInput.addEventListener('change', () => {
       if (!consentInput.checked) {
         consentInput.setCustomValidity('Вы должны согласиться с обработкой персональных данных.');
@@ -64,7 +58,6 @@ const validateForms = () => {
       }
     });
 
-    // Валидация формы при отправке
     form.addEventListener('submit', (event) => {
       if (!form.checkValidity()) {
         event.preventDefault();
@@ -78,7 +71,6 @@ const validateForms = () => {
       }
     });
 
-    // Удаление состояния ошибки при изменении
     form.querySelectorAll('input').forEach((input) => {
       input.addEventListener('input', () => {
         if (input.validity.valid) {

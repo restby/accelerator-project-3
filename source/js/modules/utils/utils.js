@@ -26,5 +26,28 @@ const removeFocusAfterClick = () => {
   }
 };
 
+const stylengSelectArrows = () => {
+  const selects = document.querySelectorAll('select');
+  if (!selects) {
+    return;
+  }
 
-export { lazyLoadImages, removeFocusAfterClick };
+  selects.forEach((select) => {
+    const parent = select.parentElement;
+
+    select.addEventListener('focus', () => {
+      parent.classList.add('is-open');
+    });
+
+    select.addEventListener('blur', () => {
+      parent.classList.remove('is-open');
+    });
+
+    select.addEventListener('change', () => {
+      parent.classList.remove('is-open');
+    });
+  });
+};
+
+
+export { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows };

@@ -338,7 +338,6 @@
   line-height: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  text-align: center;
   text-transform: uppercase;
   color: $color-action;
   cursor: pointer;
@@ -390,18 +389,13 @@
   }
 }
 
-// .modal-form__field--btn span {
-//   @include vp-767 {
-//     width: 100%;
-//     max-width: 162px;
-//   }
-// }
-
 .modal-form__field--btn span {
   width: 100%;
+  text-align: left;
 
   @include vp-767 {
     max-width: 162px;
+    text-align: center;
   }
 }
 

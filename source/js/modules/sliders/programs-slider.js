@@ -1,7 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
-// import 'swiper/css/scrollbar';
 
 const initProgramsSlider = () => {
   const programsSlider = document.querySelector('[data-slider="programs-slider"]');
