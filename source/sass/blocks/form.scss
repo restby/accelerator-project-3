@@ -1,627 +1,975 @@
-// .form {
-//   font-size: 0;
-//   line-height: 0;
-//   padding-top: 60px;
-//   padding-bottom: 60px;
-
-//   @include vp-1439 {
-//     padding-top: 50px;
-//     padding-bottom: 50px;
-//   }
-
-//   @include vp-767 {
-//     padding-top: 40px;
-//     padding-bottom: 40px;
-//   }
-// }
-
-// .form .container {
-//   @include vp-1439 {
-//     padding-left: 58px;
-//     padding-right: 58px;
-//   }
-
-//   @include vp-767 {
-//     padding-left: 10px;
-//     padding-right: 10px;
-//     padding-top: 43px;
-//     padding-bottom: 40px;
-
-//     @supports (background-image: url("image.webp")) {
-//       background-image: url("../../img/background/bg-form-mobile.webp");
-//     }
-
-//     background-image: url("../../img/background/bg-form-mobile.jpg");
-
-//     @media (resolution >= 2dppx) {
-//       @supports (background-image: url("image.webp")) {
-//         background-image: url("../../img/background/bg-form-mobile@2x.webp");
-//       }
-
-//       background-image: url("../../img/background/bg-form-mobile@2x.jpg");
-//     }
-//   }
-// }
-
-// .form__container {
-//   border-radius: 16px;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: 100% 100%;
-
-//   @supports (background-image: url("image.webp")) {
-//     background-image: url("../../img/background/bg-form-desktop.webp");
-//   }
-
-//   background-image: url("../../img/background/bg-form-desktop.jpg");
-
-//   @media (resolution >= 2dppx) {
-//     @supports (background-image: url("image.webp")) {
-//       background-image: url("../../img/background/bg-form-desktop@2x.webp");
-//     }
-
-//     background-image: url("../../img/background/bg-form-desktop@2x.jpg");
-//   }
-
-//   @include vp-1439 {
-//     @supports (background-image: url("image.webp")) {
-//       background-image: url("../../img/background/bg-form-tablet.webp");
-//     }
-
-//     background-image: url("../../img/background/bg-form-tablet.jpg");
-
-//     @media (resolution >= 2dppx) {
-//       @supports (background-image: url("image.webp")) {
-//         background-image: url("../../img/background/bg-form-tablet@2x.webp");
-//       }
-
-//       background-image: url("../../img/background/bg-form-tablet@2x.jpg");
-//     }
-//   }
-
-//   @include vp-767 {
-//     background-image: none;
-//   }
-// }
-
-// .form__wrapper {
-//   width: 100%;
-//   max-width: 490px;
-//   padding-left: 70px;
-//   padding-right: 70px;
-//   padding-top: 30px;
-//   padding-bottom: 40px;
-//   background-color: $color-action;
-//   border-radius: 16px;
-
-
-//   @include vp-1439 {
-//     max-width: 442px;
-//     padding-left: 40px;
-//     padding-right: 40px;
-//     padding-top: 30px;
-//     padding-bottom: 36px;
-//   }
-
-//   @include vp-767 {
-//     max-width: 300px;
-//     padding-left: 15px;
-//     padding-right: 15px;
-//     padding-top: 15px;
-//     padding-bottom: 27px;
-//   }
-// }
-
-// .form__head p {
-//   margin: 0;
-//   margin-bottom: 40px;
-//   font-size: 16px;
-//   line-height: 26px;
-//   font-weight: 400;
-//   color: $color-white-alternative;
-
-//   @include vp-1439 {
-//     line-height: 20px;
-//   }
-
-//   @include vp-767 {
-//     margin-bottom: 22px;
-//     font-size: 14px;
-//   }
-// }
-
-// .form__title {
-//   font-size: 32px;
-//   line-height: 36px;
-//   font-weight: 400;
-//   margin-bottom: 20px;
-//   padding-top: 14px;
-//   padding-bottom: 14px;
-//   color: $color-white;
-
-//   @include vp-1439 {
-//     padding-top: 11px;
-//     padding-bottom: 11px;
-//     font-size: 28px;
-//     line-height: 28px;
-//   }
-
-//   @include vp-767 {
-//     padding: 0;
-//     margin-bottom: 9px;
-//     font-size: 18px;
-//     line-height: 22px;
-//   }
-// }
-
-// .form form {
-//   display: flex;
-//   flex-direction: column;
-//   row-gap: 20px;
-
-//   @include vp-767 {
-//     row-gap: 0;
-//   }
-// }
-
-// .form__field {
-//   display: flex;
-//   flex-direction: column;
-
-//   &--name {
-//     @include vp-767 {
-//       margin-bottom: 21px;
-//     }
-//   }
-
-//   &--phone {
-//     @include vp-767 {
-//       margin-bottom: 21px;
-//     }
-//   }
-
-//   &--message {
-//     @include vp-767 {
-//       margin-bottom: 20px;
-//     }
-//   }
-
-//   // &--cities {
-//   //   @include vp-767 {
-//   //     margin-bottom: 20px;
-//   //   }
-//   // }
-
-//   // &--consent {
-//   //   flex-direction: row;
-//   //   align-items: flex-start;
-
-//   //   @include vp-767 {
-//   //     margin-bottom: 20px;
-//   //   }
-//   // }
-// }
-
-// .form__label {
-//   margin-bottom: 12px;
-//   font-size: 14px;
-//   font-weight: 400;
-//   line-height: 18px;
-//   color: rgba($color-white-alternative, 0.8);
-
-//   @include vp-1439 {
-//     line-height: 20px;
-//   }
-
-//   @include vp-767 {
-//     margin-bottom: 11px;
-//     font-size: 12px;
-//     line-height: 14px;
-//   }
-// }
-
-// .form__field--cities {
-//   position: relative;
-
-//   &::after {
-//     position: absolute;
-//     content: "";
-//     right: 21px;
-//     bottom: 18px;
-//     pointer-events: none;
-//     mask-repeat: no-repeat;
-//     mask-position: center;
-//     background-color: $color-white;
-//     width: 16px;
-//     height: 16px;
-//     mask-image: url("../__spritemap#sprite-icon-select-arrow-view");
-//     mask-size: 16px 9px;
-//     z-index: 1;
-//     cursor: pointer;
-//   }
-
-//   @include vp-1439 {
-//     padding-top: 3px;
-//   }
-
-//   @include vp-767 {
-//     margin-bottom: 20px;
-//     max-width: 260px;
-//     padding-top: 1px;
-//   }
-// }
-
-
-
-// .form__field--cities .form__label {
-//   line-height: 14px;
-
-//   @include vp-1439 {
-//     margin-bottom: 15px;
-//   }
-
-//   @include vp-767 {
-//     margin-bottom: 11px;
-//   }
-// }
-
-// .form__field--consent {
-//   min-height: 20px;
-//   display: flex;
-//   align-items: center;
-//   font-size: 0;
-//   line-height: 0;
-
-//   @include vp-1439 {
-//     padding-top: 1px;
-//   }
-
-//   @include vp-767 {
-//     margin-bottom: 20px;
-//     padding-top: 0;
-//   }
-// }
-
-// .form__field--consent .form__label {
-//   margin-bottom: 0;
-//   padding-left: 30px;
-//   cursor: pointer;
-//   position: relative;
-//   font-size: 12px;
-//   line-height: 12px;
-//   font-weight: 400;
-
-//   &::before,
-//   &::after {
-//     position: absolute;
-//     content: "";
-//   }
-
-//   &::before {
-//     width: 20px;
-//     height: 20px;
-//     left: 0;
-//     top: -4px;
-//     background-color: $color-white;
-//     border-radius: 2px;
-//     border: 1px solid $color-white;
-//     transition: background-color $trans-default;
-
-//     @include vp-767 {
-//       top: 50%;
-//       transform: translateY(-50%);
-//     }
-//   }
-
-//   &::after {
-//     display: none;
-//     mask-repeat: no-repeat;
-//     mask-position: center;
-//     background-color: $color-action;
-//     width: 10px;
-//     height: 10px;
-//     top: 0;
-//     left: 5px;
-//     mask-image: url("../__spritemap#sprite-icon-checked-view");
-//     mask-size: 10px 8px;
-//   }
-
-//   @include vp-767 {
-//     line-height: 14px;
-//   }
-// }
-
-// .form__field--consent br {
-//   display: none;
-
-//   @include vp-767 {
-//     display: inline;
-//   }
-// }
-
-// .form__field--consent input {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   padding: 0;
-//   overflow: hidden;
-//   white-space: nowrap;
-//   border: 0;
-//   clip: rect(0 0 0 0);
-//   clip-path: inset(100%);
-// }
-
-
-
-
-// .form__field--consent input:focus:not(:checked) + .form__label::before,
-// .form__field--consent input:focus-visible:not(:checked) + .form__label::before,
-// .form__field--consent input:hover:not(:checked) + .form__label::before {
-//   background-color: $color-transparent;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--consent input:disabled {
-//   cursor: not-allowed;
-// }
-
-// .form__field--consent input:disabled + .form__label::before {
-//   background-color: rgba($color-white, 0.6);
-// }
-
-// .form__field--consent.is-error input + .form__label::before {
-//   background-color: rgba($color-error, 0.2);
-//   border-color: rgba($color-error, 0.7);
-// }
-
-// .form__field--consent input:checked + .form__label::before {
-//   background-color: $color-white;
-// }
-
-// .form__field--consent input:checked + .form__label::after {
-//   display: block;
-// }
-
-// .form__field--consent input:checked:focus + .form__label::before,
-// .form__field--consent input:checked:focus-visible + .form__label::before,
-// .form__field--consent input:checked:hover + .form__label::before {
-//   background-color: $color-transparent;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--consent input:checked:focus + .form__label::after,
-// .form__field--consent input:checked:focus-visible + .form__label::after,
-// .form__field--consent input:checked:hover + .form__label::after {
-//   background-color: $color-white;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--consent input:disabled:checked {
-//   cursor: not-allowed;
-// }
-
-// .form__field--consent input:disabled:checked + .form__label::before {
-//   background-color: $color-disabled;
-//   border-color: $color-disabled;
-// }
-
-// .form__field--consent input:disabled:checked + .form__label::after {
-//   background-color: rgba($color-white, 0.7);
-// }
-
-// .form__field--name input,
-// .form__field--phone input,
-// .form__field--message textarea {
-//   background-color: $color-transparent;
-//   border: 1px solid rgba($color-white, 0.3);
-//   border-radius: 8px;
-//   padding: 13px 20px;
-//   transition: border-color $trans-default;
-
-//   &:focus,
-//   &:focus-visible,
-//   &:hover,
-//   &:active {
-//     border-color: $color-white;
-//     transition: border-color $trans-default;
-//   }
-
-//   &:disabled {
-//     background-color: rgba($color-white, 0.2);
-//     border-color: rgba($color-white, 0.4);
-//   }
-// }
-
-// .form__field--name.is-error input,
-// .form__field--phone.is-error input,
-// .form__field--message.is-error textarea {
-//   background-color: rgba($color-error, 0.2);
-//   border-color: $color-error;
-// }
-
-// .form__field--name input,
-// .form__field--phone input {
-//   min-height: 50px;
-// }
-
-// .form__field textarea {
-//   min-height: 90px;
-//   resize: none;
-
-//   @include vp-1439 {
-//     min-height: 88px;
-//   }
-
-//   @include vp-767 {
-//     min-height: 94px;
-//   }
-// }
-
-// .form__field select {
-//   padding: 16px 20px;
-//   background-color: $color-transparent;
-//   border: 1px solid rgba($color-white, 0.3);
-//   min-height: 52px;
-//   border-radius: 8px;
-//   appearance: none;
-//   cursor: pointer;
-// }
-
-// .form__field option {
-//   padding: 17px 20px;
-//   font-size: 14px;
-//   line-height: 14px;
-//   font-weight: 400;
-//   color: $color-dark;
-
-//   &:hover {
-//     background-color: $color-action;
-//   }
-// }
-
-// .form__field--btn button {
-//   margin-top: 20px;
-//   padding: 4px;
-//   padding-left: 30px;
-//   border-radius: 30px;
-//   min-height: 56px;
-//   border: 1px solid $color-white;
-//   background-color: $color-transparent;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   column-gap: 30px;
-//   transition: background-color $trans-default;
-//   cursor: pointer;
-
-//   @include vp-1439 {
-//     max-width: 352px;
-//   }
-
-//   @include vp-767 {
-//     margin-top: 0;
-//     min-height: 44px;
-//     max-width: 260px;
-//   }
-// }
-
-// .form__field--btn b {
-//   width: 100%;
-//   max-width: 238px;
-//   font-size: 14px;
-//   font-weight: 500;
-//   line-height: 14px;
-//   letter-spacing: 0.28px;
-//   text-align: center;
-//   text-transform: uppercase;
-//   color: $color-white;
-//   transition: color $trans-default;
-//   border-color: $color-white;
-
-//   @include vp-767 {
-//     font-size: 12px;
-//     line-height: 12px;
-//   }
-// }
-
-// .form__field--btn span {
-//   flex-shrink: 0;
-//   background-color: $color-white;
-//   border-radius: 50%;
-//   width: 46px;
-//   height: 46px;
-//   position: relative;
-//   transition: background-color $trans-default;
-
-//   &::after {
-//     position: absolute;
-//     content: "";
-//     top: 50%;
-//     left: 50%;
-//     transform: translateX(-50%) translateY(-50%);
-//     mask-repeat: no-repeat;
-//     mask-position: center;
-//     background-color: $color-action;
-//     transition: background-color $trans-default;
-//     width: 8px;
-//     height: 8px;
-//     mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
-//     mask-size: 8px 8px;
-//   }
-
-//   @include vp-767 {
-//     width: 34px;
-//     height: 34px;
-//   }
-// }
-
-// .form__field--btn button:focus span::after,
-// .form__field--btn button:focus-visible span::after {
-//   transform: rotate(45deg) translateX(-4px);
-//   transform-origin: center center;
-//   transition: background-color $trans-default;
-// }
-
-
-// .form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) {
-//   background-color: $color-white;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) b {
-//   color: $color-action;
-//   transition: color $trans-default;
-// }
-
-// .form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) span {
-//   background-color: $color-action;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--btn button:hover:not(:focus):not(:focus-visible):not(:active):not(:disabled) span::after {
-//   background-color: $color-white;
-//   transform: rotate(45deg) translateX(-4px);
-//   transform-origin: center center;
-//   transition: background-color $trans-default;
-// }
-
-
-// .form__field--btn button:active:not(:disabled) {
-//   background-color: $color-white;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--btn button:active:not(:disabled) b {
-//   color: rgba($color-action, 0.7);
-//   transition: color $trans-default;
-// }
-
-// .form__field--btn button:active:not(:disabled) span {
-//   background-color: $color-action;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--btn button:active:not(:disabled) span::after {
-//   background-color: rgba($color-white, 0.7);
-//   transform: rotate(45deg) translateX(-4px);
-//   transform-origin: center center;
-//   transition: background-color $trans-default;
-// }
-
-// .form__field--btn button:disabled {
-//   border-color: $color-disabled;
-//   cursor: not-allowed;
-// }
-
-// .form__field--btn button:disabled span {
-//   background-color: $color-disabled;
-// }
-
-// .form__field--btn button:disabled b {
-//   color: $color-disabled;
-// }
-
-// .form__field--btn button:disabled span::after {
-//   background-color: rgba($color-white, 0.6);
-// }
+.form {
+  &--main {
+    font-size: 0;
+    line-height: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include vp-1439 {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @include vp-767 {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.form--main .container {
+  @include vp-1439 {
+    padding-left: 58px;
+    padding-right: 58px;
+  }
+
+  @include vp-767 {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 43px;
+    padding-bottom: 39px;
+
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-mobile.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-mobile.jpg");
+
+    @media (resolution >= 2dppx) {
+      @supports (background-image: url("image.webp")) {
+        background-image: url("../../img/background/bg-form-mobile@2x.webp");
+      }
+
+      background-image: url("../../img/background/bg-form-mobile@2x.jpg");
+    }
+  }
+}
+
+.form--main .form__container {
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+
+  @supports (background-image: url("image.webp")) {
+    background-image: url("../../img/background/bg-form-desktop.webp");
+  }
+
+  background-image: url("../../img/background/bg-form-desktop.jpg");
+
+  @media (resolution >= 2dppx) {
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-desktop@2x.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-desktop@2x.jpg");
+  }
+
+  @include vp-1439 {
+    @supports (background-image: url("image.webp")) {
+      background-image: url("../../img/background/bg-form-tablet.webp");
+    }
+
+    background-image: url("../../img/background/bg-form-tablet.jpg");
+
+    @media (resolution >= 2dppx) {
+      @supports (background-image: url("image.webp")) {
+        background-image: url("../../img/background/bg-form-tablet@2x.webp");
+      }
+
+      background-image: url("../../img/background/bg-form-tablet@2x.jpg");
+    }
+  }
+
+  @include vp-767 {
+    background-image: none;
+  }
+}
+
+.form--main .form__wrapper {
+  width: 100%;
+  max-width: 490px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: $color-action;
+  border-radius: 16px;
+
+
+  @include vp-1439 {
+    max-width: 442px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 36px;
+  }
+
+  @include vp-767 {
+    max-width: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 27px;
+  }
+}
+
+.form--modal .form__head {
+  margin-bottom: 30px;
+
+  @include vp-767 {
+    margin-bottom: 25px;
+  }
+}
+
+.form .form__title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
+
+  @include vp-1439 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+  }
+}
+
+.form--modal .form__title {
+  margin-bottom: 14px;
+  text-align: center;
+  color: $color-action;
+
+  @include vp-1439 {
+    margin-bottom: 17px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 12px;
+    line-height: 18px;
+  }
+}
+
+.form--main .form__title {
+  margin-bottom: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: $color-white;
+
+  @include vp-1439 {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    margin-bottom: 9px;
+    line-height: 22px;
+  }
+}
+
+.form .form__descr {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+  }
+}
+
+.form--modal .form__descr {
+  text-align: center;
+  color: inherit;
+
+  @include vp-767 {
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.form--main .form__descr {
+  margin-bottom: 40px;
+  color: $color-white-alternative;
+
+  @include vp-767 {
+    margin-bottom: 22px;
+  }
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: flex-start;
+}
+
+.form--modal form {
+  font-size: 0;
+  line-height: 0;
+
+  @include vp-767 {
+    row-gap: 15px;
+  }
+}
+
+.form--main form {
+  @include vp-767 {
+    row-gap: 0;
+  }
+}
+
+.form__field:not(.form__field--consent):not(.form__field--btn) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form__field--btn {
+  width: 100%;
+}
+
+.form .form__field--cities {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: 21px;
+    bottom: 18px;
+    pointer-events: none;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    width: 16px;
+    height: 16px;
+    mask-image: url("../__spritemap#sprite-icon-select-arrow-view");
+    mask-size: 16px 9px;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+.form .form__field--cities.is-open::after {
+  transform: rotate(180deg);
+}
+
+.form--modal .form__field--cities {
+  &::after {
+    background-color: $color-dark;
+
+    @include vp-767 {
+      bottom: 14px;
+    }
+  }
+}
+
+.form--main .form__field--cities {
+  &::after {
+    background-color: $color-white;
+  }
+
+  @include vp-1439 {
+    padding-top: 3px;
+  }
+
+  @include vp-767 {
+    max-width: 260px;
+    padding-top: 1px;
+  }
+}
+
+.form .form__field--consent {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 0;
+  line-height: 0;
+}
+
+
+.form--main .form__field--consent {
+  margin-top: 2px;
+
+  @include vp-1439 {
+    padding-top: 1px;
+    margin-top: 0;
+  }
+
+  @include vp-767 {
+    padding-top: 0;
+  }
+}
+
+.form .form__label {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba($color-dark, 0.8);
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    line-height: 14px;
+  }
+}
+
+.form--modal .form__label {
+  margin-bottom: 12px;
+  color: rgba($color-dark, 0.8);
+
+  @include vp-767 {
+    margin-bottom: 8px;
+  }
+}
+
+.form--main .form__label {
+  margin-bottom: 12px;
+  color: rgba($color-white-alternative, 0.8);
+
+  @include vp-767 {
+    margin-bottom: 11px;
+    font-size: 12px;
+  }
+}
+
+.form__field--main.form__field--cities .form__label {
+  line-height: 14px;
+
+  @include vp-1439 {
+    margin-bottom: 15px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 11px;
+  }
+}
+
+.form__field--consent .form__label {
+  padding-left: 30px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: -4px;
+    border-radius: 2px;
+    transition: background-color $trans-default, border-color $trans-default;
+    z-index: 1;
+
+    @include vp-767 {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: none;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-action;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    mask-image: url("../__spritemap#sprite-icon-checked-view");
+    mask-size: 10px 8px;
+    z-index: 2;
+  }
+
+  @include vp-767 {
+    line-height: 14px;
+  }
+}
+
+.form__field--modal.form__field--consent .form__label {
+  &::before {
+    background-color: $color-action;
+    border: 1px solid $color-action;
+
+    @include vp-767 {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.form__field--main.form__field--consent .form__label {
+  &::before {
+    background-color: $color-white;
+    border: 1px solid $color-white;
+  }
+}
+
+.form--modal .form__label--consent {
+  display: inline-block;
+  width: 100%;
+}
+
+.form__field--main.form__field--consent br {
+  display: none;
+
+  @include vp-767 {
+    display: inline;
+  }
+}
+
+.form__field:not(.form__field--consent) input,
+.form__field select {
+  width: 100%;
+  background-color: $color-transparent;
+  padding: 0;
+  border: 1px solid rgba($color-dark, 0.3);
+  border-radius: 8px;
+  min-height: 50px;
+  color: $color-dark;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  transition: border-color $trans-default;
+}
+
+.form__field select {
+  appearance: none;
+  cursor: pointer;
+
+  @include vp-1439 {
+    min-height: 52px;
+  }
+}
+
+.form__field--main:not(.form__field--consent) input,
+.form__field--main textarea {
+  color: $color-white;
+}
+
+.form__field textarea {
+  width: 100%;
+  background-color: $color-transparent;
+  border: 1px solid rgba($color-white, 0.3);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  transition: border-color $trans-default;
+  min-height: 90px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  resize: none;
+
+  @include vp-1439 {
+    min-height: 88px;
+  }
+
+  @include vp-767 {
+    min-height: 94px;
+  }
+}
+
+.form__field--main textarea {
+  border: 1px solid rgba($color-white, 0.3);
+}
+
+.form__field--modal:not(.form__field--consent) input,
+.form__field--modal select {
+  border: 1px solid rgba($color-dark, 0.3);
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @include vp-767 {
+    min-height: 44px;
+  }
+}
+
+.form__field--main:not(.form__field--consent) input,
+.form__field--main select {
+  border: 1px solid rgba($color-white, 0.3);
+}
+
+.form__field--modal:not(.form__field--consent) input:focus,
+.form__field--modal:not(.form__field--consent) input:focus-visible,
+.form__field--modal:not(.form__field--consent) input:hover,
+.form__field--modal:not(.form__field--consent) input:active,
+.form__field--modal select:focus,
+.form__field--modal select:focus-visible,
+.form__field--modal select:hover,
+.form__field--modal select:active {
+  border-color: $color-dark;
+  transition: border-color $trans-default;
+}
+
+.form__field--main:not(.form__field--consent) input:focus,
+.form__field--main:not(.form__field--consent) input:focus-visible,
+.form__field--main:not(.form__field--consent) input:hover,
+.form__field--main:not(.form__field--consent) input:active,
+.form__field--main textarea:focus,
+.form__field--main textarea:focus-visible,
+.form__field--main textarea:hover,
+.form__field--main textarea:active,
+.form__field--main select:focus,
+.form__field--main select:focus-visible,
+.form__field--main select:hover,
+.form__field--main select:active {
+  border-color: $color-white;
+  transition: border-color $trans-default;
+}
+
+.form__field--modal:not(.form__field--consent):has(input:focus) .form__label,
+.form__field--modal:not(.form__field--consent):has(input:focus-visible) .form__label,
+.form__field--modal:not(.form__field--consent):has(input:hover) .form__label,
+.form__field--modal:not(.form__field--consent):has(input:active) .form__label,
+.form__field--modal:has(select:focus) .form__label,
+.form__field--modal:has(select:focus-visible) .form__label,
+.form__field--modal:has(select:hover) .form__label,
+.form__field--modal:has(select:active) .form__label {
+  color: $color-dark;
+  transition: color $trans-default;
+}
+
+.form__field--main:not(.form__field--consent):has(input:focus) .form__label,
+.form__field--main:not(.form__field--consent):has(input:focus-visible) .form__label,
+.form__field--main:not(.form__field--consent):has(input:hover) .form__label,
+.form__field--main:not(.form__field--consent):has(input:active) .form__label,
+.form__field--main:has(textarea:focus) .form__label,
+.form__field--main:has(textarea:focus-visible) .form__label,
+.form__field--main:has(textarea:hover) .form__label,
+.form__field--main:has(textarea:active) .form__label,
+.form__field--main:has(select:focus) .form__label,
+.form__field--main:has(select:focus-visible) .form__label,
+.form__field--main:has(select:hover) .form__label,
+.form__field--main:has(select:active) .form__label {
+  color: $color-white-alternative;
+  transition: color $trans-default;
+}
+
+.form__field--modal:not(.form__field--consent) input:disabled {
+  border-color: rgba($color-disabled, 0.5);
+  background-color: rgba($color-disabled, 0.2);
+}
+
+.form__field--main:not(.form__field--consent) input:disabled,
+.form__field--main textarea:disabled {
+  background-color: rgba($color-white, 0.2);
+  border-color: rgba($color-white, 0.4);
+}
+
+.form__field--modal:has(select:disabled) .form__label {
+  color: rgba($color-dark, 0.6);
+}
+
+.form__field--main:has(select:disabled) .form__label {
+  color: rgba($color-white-alternative, 0.6);
+}
+
+.form__field--modal:not(.form__field--consent).is-error input,
+.form__field--main:not(.form__field--consent).is-error input,
+.form__field--main.is-error textarea {
+  background-color: rgba($color-error, 0.2);
+  border-color: $color-error;
+}
+
+.form--modal .form__field--btn {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include vp-767 {
+    justify-content: flex-start;
+  }
+}
+
+.form__field--consent input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.form__field--modal.form__field--consent input:focus:not(:checked) + .form__label::before,
+.form__field--modal.form__field--consent input:focus-visible:not(:checked) + .form__label::before,
+.form__field--modal.form__field--consent input:not(:checked):not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::before {
+  border-color: $color-action;
+  background-color: $color-white;
+  transition: background-color $trans-default, border-color $trans-default;
+}
+
+.form__field--main.form__field--consent input:focus:not(:checked) + .form__label::before,
+.form__field--main.form__field--consent input:focus-visible:not(:checked) + .form__label::before,
+.form__field--main.form__field--consent input:not(:checked):not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::before {
+  border-color: $color-white;
+  background-color: $color-action;
+  transition: background-color $trans-default, border-color $trans-default;
+}
+
+.form__field--modal.form__field--consent input:disabled:not(:checked) + .form__label::before {
+  border-color: $color-action;
+  background-color: rgba($color-action, 0.6);
+  cursor: not-allowed;
+}
+
+.form__field--main.form__field--consent input:disabled:not(:checked) + .form__label::before {
+  border-color: $color-white;
+  background-color: rgba($color-white, 0.6);
+  cursor: not-allowed;
+}
+
+.form__field--consent input:disabled:not(:checked) + .form__label {
+  cursor: not-allowed;
+}
+
+.form__field--consent.is-error input:not(:disabled):not(:checked) + .form__label::before {
+  border-color: $color-error;
+  background-color: rgba($color-error, 0.2);
+}
+
+.form__field--modal.form__field--consent input:checked + .form__label::before {
+  background-color: $color-action;
+  border-color: $color-action;
+}
+
+.form__field--modal.form__field--consent input:checked + .form__label::after {
+  display: block;
+  background-color: $color-white;
+}
+
+.form__field--main.form__field--consent input:checked + .form__label::before {
+  background-color: $color-white;
+  border-color: $color-white;
+}
+
+.form__field--main.form__field--consent input:checked + .form__label::after {
+  display: block;
+  background-color: $color-action;
+}
+
+.form__field--modal.form__field--consent input:focus:checked + .form__label::before,
+.form__field--modal.form__field--consent input:focus-visible:checked + .form__label::before,
+.form__field--modal.form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::before {
+  border-color: $color-action;
+  background-color: $color-action;
+  transition: background-color $trans-default, border-color $trans-default;
+}
+
+.form__field--main.form__field--consent input:focus:checked + .form__label::before,
+.form__field--main.form__field--consent input:focus-visible:checked + .form__label::before,
+.form__field--main.form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::before {
+  border-color: $color-white;
+  background-color: $color-action;
+  transition: background-color $trans-default, border-color $trans-default;
+}
+
+
+.form__field--modal.form__field--consent input:focus:checked + .form__label::after,
+.form__field--modal.form__field--consent input:focus-visible:checked + .form__label::after,
+.form__field--modal.form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::after {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.form__field--main.form__field--consent input:focus:checked + .form__label::after,
+.form__field--main.form__field--consent input:focus-visible:checked + .form__label::after,
+.form__field--main.form__field--consent input:checked:not(:disabled):not(:focus):not(:focus-visible) + .form__label:hover::after {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.form__field--consent input:disabled:checked + .form__label::before {
+  border-color: $color-disabled;
+  background-color: $color-disabled;
+}
+
+.form__field--consent input:disabled:checked + .form__label::after {
+  background-color: rgba($color-white, 0.7);
+}
+
+.form__field--consent input:disabled:checked + .form__label {
+  cursor: not-allowed;
+}
+
+
+.form__field--btn button {
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  background-color: $color-transparent;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  transition: background-color $trans-default, color $trans-default;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    right: 3px;
+    top: 3px;
+    z-index: 1;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    @include vp-767 {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 21px;
+    transform: translateY(-50%);
+    z-index: 2;
+    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
+  }
+
+  @include vp-767 {
+    max-width: none;
+    min-height: 42px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+
+.form__field--modal.form__field--btn button {
+  max-width: 194px;
+  min-height: 54px;
+  padding: 3px;
+  padding-left: 29px;
+  border: 1px solid $color-action;
+  letter-spacing: 0.02em;
+  color: $color-action;
+
+  &::before {
+    background-color: $color-action;
+  }
+
+  &::after {
+    background-color: $color-white;
+    width: 10px;
+    height: 10px;
+    mask-size: 10px 10px;
+
+    @include vp-767 {
+      right: 15px;
+    }
+  }
+
+  @include vp-767 {
+    max-width: none;
+    min-height: 42px;
+  }
+}
+
+.form__field--modal.form__field--btn span {
+  width: 100%;
+  text-align: left;
+
+  @include vp-767 {
+    max-width: 162px;
+    text-align: center;
+  }
+}
+
+.form__field--main.form__field--btn {
+  margin-top: 20px;
+
+  @include vp-1439 {
+    max-width: 352px;
+  }
+
+  @include vp-767 {
+    margin-top: 0;
+    max-width: 260px;
+  }
+}
+
+.form__field--main.form__field--btn button {
+  min-height: 56px;
+  padding: 4px;
+  padding-left: 30px;
+  border: 1px solid $color-white;
+  letter-spacing: 0.28px;
+  color: $color-white;
+
+  &::before {
+    background-color: $color-white;
+  }
+
+  &::after {
+    background-color: $color-action;
+    width: 8px;
+    height: 8px;
+    mask-size: 8px 8px;
+
+    @include vp-767 {
+      right: 15px;
+    }
+  }
+
+  @include vp-767 {
+    min-height: 44px;
+  }
+}
+
+.form__field--main.form__field--btn span {
+  width: 100%;
+  max-width: 238px;
+  text-align: center;
+
+  @include vp-1439 {
+    max-width: 240px;
+  }
+
+  @include vp-767 {
+    max-width: 160px;
+  }
+}
+
+.form__field--modal.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active) {
+  background: $color-action;
+  color: $color-white;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.form__field--main.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active) {
+  background: $color-white;
+  color: $color-action;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.form__field--modal.form__field--btn button:active {
+  color: rgba($color-white, 0.7);
+  background: $color-action;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.form__field--main.form__field--btn button:active {
+  color: rgba($color-action, 0.7);
+  background: $color-white;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.form__field--modal.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::before {
+  background: $color-white;
+  transition: background-color $trans-default;
+}
+
+.form__field--main.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::before {
+  background: $color-action;
+  transition: background-color $trans-default;
+}
+
+.form__field--btn button:focus::after,
+.form__field--btn button:focus-visible::after {
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default;
+}
+
+.form__field--modal.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::after {
+  background: $color-action;
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.form__field--main.form__field--btn button:hover:not(:disabled):not(:focus):not(:focus-visible):not(:active)::after {
+  background: $color-white;
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.form__field--modal.form__field--btn button:active:not(:disabled)::before {
+  background: $color-white;
+  transition: background-color $trans-default;
+}
+
+.form__field--main.form__field--btn button:active:not(:disabled)::before {
+  background: $color-action;
+  transition: background-color $trans-default;
+}
+
+.form__field--modal.form__field--btn button:active::after {
+  background: rgba($color-action, 0.7);
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.form__field--main.form__field--btn button:active::after {
+  background: rgba($color-white, 0.7);
+  transform: rotate(45deg) translateX(-4px) translateY(-4px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.form__field--btn button:disabled {
+  pointer-events: none;
+  color: $color-disabled;
+  border-color: $color-disabled;
+  background-color: $color-transparent;
+}
+
+.form__field--modal.form__field--btn button:disabled::before {
+  background-color: $color-disabled;
+}
+
+.form__field--modal.form__field--btn button:disabled::after {
+  background-color: rgba($color-white, 0.6);
+}
+
+.form__field--main.form__field--name,
+.form__field--main.form__field--phone {
+  @include vp-767 {
+    margin-bottom: 21px;
+  }
+}
+
+.form__field--main.form__field--message,
+.form__field--main.form__field--cities,
+.form__field--main.form__field--consent {
+  @include vp-767 {
+    margin-bottom: 20px;
+  }
+}

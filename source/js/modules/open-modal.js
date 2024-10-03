@@ -26,7 +26,6 @@ const openModalWindow = () => {
     }
   });
 
-  // Закрытие модального окна после успешной отправки формы
   document.querySelectorAll('.modal form').forEach((form) => {
     form.addEventListener('submit', () => {
       if (form.checkValidity()) {

@@ -32,7 +32,7 @@ const stylengSelectArrows = () => {
     return;
   }
 
-  selects.forEach(select => {
+  selects.forEach((select) => {
     const parent = select.parentElement;
 
     select.addEventListener('focus', () => {
@@ -48,7 +48,6 @@ const stylengSelectArrows = () => {
     });
   });
 };
-
 
 
 export { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows };

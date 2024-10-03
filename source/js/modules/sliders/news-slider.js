@@ -13,7 +13,7 @@ const initNewsSlider = () => {
 
   const duplicateSlides = () => {
     const wrapper = newsSlider.querySelector('.swiper-wrapper');
-    wrapper.innerHTML = ''; // Очистить текущие слайды
+    wrapper.innerHTML = '';
 
     let slidesToDuplicate;
     if (window.innerWidth >= 1440) {
@@ -108,7 +108,7 @@ const initNewsSlider = () => {
   window.addEventListener('resize', () => {
     duplicateSlides();
     swapSlides();
-    swiperInstance.update(); // Обновить Swiper после изменения слайдов
+    swiperInstance.update();
   });
 
   duplicateSlides();
