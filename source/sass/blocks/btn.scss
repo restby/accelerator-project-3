@@ -1,46 +1,126 @@
 .btn {
-  border-radius: 30px;
   min-height: 56px;
+  border-radius: 30px;
   border: 1px solid $color-action;
-  background-color: $color-transparent;
-  text-decoration: none;
-  display: inline-flex;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
-  transition: background-color $trans-default;
+  background-color: $color-white;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
 
-  &--menu {
-    cursor: pointer;
-    background-color: $color-white;
-    min-width: 136px;
-    padding: 4px;
-    padding-left: 20px;
-    position: relative;
-    z-index: 2;
-    transition: background-color $trans-default, min-width $trans-default;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  color: $color-action;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: background-color $trans-default, color $trans-default;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 46px;
+    height: 46px;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 50%;
+    background-color: $color-action;
+    transition: background-color $trans-default;
 
     @include vp-767 {
-      padding-top: 3px;
-      padding-bottom: 3px;
-      min-height: 54px;
+      width: 34px;
+      height: 34px;
     }
   }
 
-  &--link {
-    padding: 4px;
-    padding-left: 30px;
-    min-width: 199px;
-
-    @include vp-1439 {
-      min-width: 198px;
-      padding: 4px;
-      padding-left: 30px;
-    }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: $color-white;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 8px 8px;
+    mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
+    transition: background-color $trans-default;
 
     @include vp-767 {
-      min-width: 154px;
-      padding-left: 20px;
+      right: 17px;
     }
+  }
+
+  @include vp-767 {
+    min-height: 44px;
+    padding-left: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.24px;
+  }
+}
+
+.btn--menu {
+  padding-left: 20px;
+
+  @include vp-1439 {
+    min-height: 56px;
+  }
+
+  @include vp-767 {
+    min-height: 54px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.28px;
+  }
+}
+
+.btn--menu::before {
+  @include vp-767 {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.btn--menu::after {
+  right: 19px;
+  width: 16px;
+  height: 8px;
+  mask-size: 16px 8px;
+  mask-image: url("../__spritemap#sprite-icon-menu-view");
+}
+
+.btn--menu.is-open {
+  background-color: $color-action;
+  color: $color-white;
+}
+
+.btn--menu.is-open::before {
+  background-color: $color-white;
+}
+
+.btn--menu.is-open::after {
+  right: 17px;
+  width: 20px;
+  height: 20px;
+  mask-size: 18px 18px;
+  background-color: $color-action;
+  mask-image: url("../__spritemap#sprite-icon-cross-view");
+}
+
+.btn--hero {
+  min-height: 58px;
+
+  @include vp-1439 {
+    min-height: 56px;
   }
 
   @include vp-767 {
@@ -48,150 +128,216 @@
   }
 }
 
+.btn--hero::before {
+  right: 5px;
 
-.btn b {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 14px;
-  letter-spacing: 0.28px;
-  text-align: center;
-  text-transform: uppercase;
-  color: $color-action;
-  transition: color $trans-default;
-}
-
-.btn--link b {
-  @include vp-767 {
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: 0.24px;
+  @include vp-1439 {
+    right: 4px;
   }
 }
 
+.btn--hero::after {
+  right: 24px;
 
-.btn span:not(.visually-hidden) {
-  background-color: $color-action;
+  @include vp-1439 {
+    right: 23px;
+  }
+
+  @include vp-767 {
+    right: 17px;
+  }
+}
+
+.btn--link {
+  width: 30px;
+  height: 30px;
+  padding: 0;
   border-radius: 50%;
-  width: 46px;
-  height: 46px;
-  position: relative;
-  transition: background-color $trans-default;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: $color-white;
-    transition: background-color $trans-default;
-  }
-}
-
-.btn--link span {
-  @include vp-767 {
-    width: 34px;
-    height: 34px;
-  }
-}
-
-
-.btn--form span::after {
+  border: none;
   background-color: $color-action;
+  font-size: 0;
+  line-height: 0;
+  min-height: 30px;
 }
 
-.btn.btn--form span::after {
+.btn--link::before {
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translateY(0);
+  border-radius: 50%;
+}
+
+.btn--link::after {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+}
+
+.btn:not(.btn--menu):not(.btn--link):not(:disabled):not(.disabled):focus::after,
+.btn:not(.btn--menu):not(.btn--link):not(:disabled):not(.disabled):focus-visible::after {
+  transform: rotate(45deg) translateX(-2px) translateY(-2px);
+  transform-origin: center center;
+  transition: transform $trans-default;
+}
+
+.btn:not(.btn--link):not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover {
   background-color: $color-action;
-}
-
-.btn--link span::after,
-.btn--form span::after {
-  width: 8px;
-  height: 8px;
-  mask-image: url("../__spritemap#sprite-icon-btn-arrow-view");
-  mask-size: 8px 8px;
-}
-
-.btn--menu span::after {
-  width: 16px;
-  height: 8px;
-  mask-image: url("../__spritemap#sprite-icon-menu-view");
-  mask-size: 14.4px 6.4px;
-}
-
-.is-open.btn--menu {
-  background-color: $color-action;
-  min-width: 286px;
-  transition: background-color $trans-default, min-width $trans-default;
-}
-
-.is-open.btn--menu b {
   color: $color-white;
-  transition: color $trans-default;
+  transition: background-color $trans-default, color $trans-default;
 }
 
-.is-open.btn--menu span {
+.btn:not(.btn--menu):not(.btn--link):not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover::before {
   background-color: $color-white;
   transition: background-color $trans-default;
-
-  &::after {
-    background-color: $color-action;
-    width: 20px;
-    height: 20px;
-    mask-image: url("../__spritemap#sprite-icon-cross-view");
-    mask-size: 16px 16px;
-    transition: background-color $trans-default;
-  }
 }
 
-.btn--link:hover:not(.disabled):not(:focus-visible):not(:active) {
+.btn:not(.btn--menu):not(.btn--link):not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover::after {
+  background-color: $color-action;
+  transform: rotate(45deg) translateX(-2px) translateY(-2px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.btn:not(:disabled):not(.disabled):active {
+  color: rgba($color-white, 0.7);
+  background-color: $color-action;
+  transition: background-color $trans-default, color $trans-default;
+}
+
+.btn:not(:disabled):not(.disabled):active::before {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn:not(.btn--menu):not(.btn--link):not(:disabled):not(.disabled):active::after {
+  background-color: rgba($color-action, 0.7);
+  transform: rotate(45deg) translateX(-2px) translateY(-2px);
+  transform-origin: center center;
+  transition: transform $trans-default, background-color $trans-default;
+}
+
+.btn--menu:not(:disabled):not(.disabled):focus,
+.btn--menu:not(:disabled):not(.disabled):focus-visible,
+.btn--menu:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover {
+  color: $color-white;
+  background-color: $color-action;
+  transition: color $trans-default, background-color $trans-default;
+}
+
+.btn--menu.is-open:not(:disabled):not(.disabled):focus,
+.btn--menu.is-open:not(:disabled):not(.disabled):focus-visible,
+.btn--menu.is-open:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover {
+  color: rgba($color-white, 0.7);
+  background-color: rgba($color-action, 0.7);
+  transition: color $trans-default, background-color $trans-default;
+}
+
+.btn--menu:not(:disabled):not(.disabled):focus::before,
+.btn--menu:not(:disabled):not(.disabled):focus-visible::before,
+.btn--menu:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover::before {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn--menu.is-open:not(:disabled):not(.disabled):focus::before,
+.btn--menu.is-open:not(:disabled):not(.disabled):focus-visible::before,
+.btn--menu.is-open:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover::before {
+  background-color: rgba($color-white, 0.7);
+  transition: background-color $trans-default;
+}
+
+.btn--menu:not(:disabled):not(.disabled):focus::after,
+.btn--menu:not(:disabled):not(.disabled):focus-visible::after,
+.btn--menu:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover::after {
   background-color: $color-action;
   transition: background-color $trans-default;
 }
 
-.btn--link:active {
-  background-color: $color-action;
-  transition: background-color $trans-default, opacity $trans-default;
-  opacity: 0.7;
+.btn--menu.is-open:not(:disabled):not(.disabled):focus::after,
+.btn--menu.is-open:not(:disabled):not(.disabled):focus-visible::after,
+.btn--menu.is-open:not(:disabled):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover::after {
+  background-color: rgba($color-action, 0.7);
+  transition: background-color $trans-default;
 }
 
-.btn--link:focus span::after,
-.btn--link:focus-visible span::after {
-  transform: rotate(45deg) translateX(-4px);
+.btn--menu:not(:disabled):not(.disabled):active {
+  background-color: rgba($color-action, 0.7);
+  transition: background-color $trans-default;
+}
+
+.btn--menu.is-open:not(:disabled):not(.disabled):active {
+  background-color: rgba($color-action, 0.4);
+  transition: background-color $trans-default;
+}
+
+.btn--menu:not(:disabled):not(.disabled):active::before {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn--menu.is-open:not(:disabled):not(.disabled):active::before {
+  background-color: rgba($color-white, 0.4);
+  transition: background-color $trans-default;
+}
+
+.btn--menu:not(:disabled):not(.disabled):active::after {
+  background-color: rgba($color-action, 0.7);
+  transition: background-color $trans-default;
+}
+
+.btn--menu.is-open:not(:disabled):not(.disabled):active::after {
+  background-color: rgba($color-action, 0.4);
+  transition: background-color $trans-default;
+}
+
+.btn--link:not(:disabled):not(.disabled):focus,
+.btn--link:not(:disabled):not(.disabled):focus-visible {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn--link:not(:disabled):not(.disabled):hover::before {
+  background-color: $color-white;
+  transition: background-color $trans-default;
+}
+
+.btn--link:not(:disabled):not(.disabled):focus::after,
+.btn--link:not(:disabled):not(.disabled):focus-visible::after {
+  transform: rotate(45deg) translateX(-2px) translateY(3px);
   transform-origin: center center;
+  transition: transform $trans-default;
 }
 
-.btn--link.disabled {
-  pointer-events: none;
+.btn--link:not(:disabled):not(.disabled):hover::after {
+  background-color: $color-action;
+  transform: rotate(45deg) translateX(-2px) translateY(3px);
+  transform-origin: center center;
+  transition: background-color $trans-default, transform $trans-default;
+}
+
+.btn--link:not(:disabled):not(.disabled):active::after {
+  background-color: rgba($color-action, 0.7);
+  transform: rotate(45deg) translateX(-2px) translateY(3px);
+  transform-origin: center center;
+  transition: background-color $trans-default, transform $trans-default;
+}
+
+.btn.disabled,
+.btn:disabled {
+  background-color: $color-transparent;
   border-color: $color-disabled;
-}
-
-.btn--link.disabled b {
   color: $color-disabled;
+  pointer-events: none;
 }
 
-.btn--link.disabled span {
+.btn.disabled::before,
+.btn:disabled::before {
   background-color: $color-disabled;
 }
 
-.btn--link:hover:not(.disabled):not(:focus-visible):not(:active) b,
-.btn--link:active b {
-  color: $color-white;
-  transition: color $trans-default;
-}
-
-.btn--link:hover:not(.disabled):not(:focus-visible):not(:active) span,
-.btn--link:active span {
-  background-color: $color-white;
-  transition: background-color $trans-default;
-}
-
-.btn--link:hover:not(.disabled):not(:focus-visible):not(:active) span::after,
-.btn--link:active span::after {
-  background-color: $color-action;
-  transform: rotate(45deg) translateX(-4px);
-  transform-origin: center center;
-  transition: background-color $trans-default;
+.btn.disabled::after,
+.btn:disabled::after {
+  background-color: rgba($color-white, 0.6);
 }

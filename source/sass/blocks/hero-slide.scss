@@ -3,7 +3,6 @@
   position: relative;
   height: auto;
   min-height: 800px;
-  padding-top: 433px;
   background-color: $color-action;
   display: flex;
   flex-direction: column;
@@ -21,11 +20,11 @@
   }
 
   @include vp-1439 {
-    padding-top: 687px;
+    min-height: 1024px;
   }
 
   @include vp-767 {
-    padding-top: 229px;
+    min-height: 568px;
     padding-bottom: 20px;
   }
 }
@@ -143,7 +142,7 @@
     @include vp-767 {
       max-width: 267px;
       padding-left: 14px;
-      padding-right: 21px;
+      padding-right: 14px;
       padding-bottom: 15px;
       border-radius: 0 0 14px;
       background-color: $color-white;
@@ -153,6 +152,9 @@
   &--link {
     width: 100%;
     max-width: 279px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding-bottom: 35px;
     padding-left: 30px;
     padding-top: 10px;
@@ -230,13 +232,14 @@
 }
 
 .hero-slide__btn {
-  min-height: 58px;
+  width: auto;
+  min-width: 199px;
 
   @include vp-1439 {
-    min-height: 56px;
+    min-width: 198px;
   }
 
   @include vp-767 {
-    min-height: 44px;
+    min-width: 154px;
   }
 }

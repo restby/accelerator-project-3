@@ -9,6 +9,21 @@ const lazyLoadImages = () => {
   }
 };
 
+const setTopheroPagination = () => {
+  const heroContainer = document.querySelector('.hero__container');
+  const heroSlideContent = document.querySelector('.hero-slide__content');
+
+  if (heroContainer && heroSlideContent) {
+    const heroSlideContentRect = heroSlideContent.getBoundingClientRect();
+    const heroContainerRect = heroContainer.getBoundingClientRect();
+
+    const offset = heroSlideContentRect.top - heroContainerRect.bottom;
+
+    heroContainer.style.position = 'relative';
+    heroContainer.style.top = `${offset + 58}px`;
+  }
+};
+
 const removeFocusAfterClick = () => {
   const buttons = document.querySelectorAll('button');
 
@@ -18,9 +33,6 @@ const removeFocusAfterClick = () => {
         setTimeout(() => {
           button.blur();
         }, 100);
-        // setTimeout(() => {
-        //   button.classList.add('is-active');
-        // }, 400);
       });
     });
   }
@@ -50,4 +62,4 @@ const stylengSelectArrows = () => {
 };
 
 
-export { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows };
+export { lazyLoadImages, setTopheroPagination, removeFocusAfterClick, stylengSelectArrows };
