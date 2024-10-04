@@ -98,6 +98,7 @@ const initNewsSlider = () => {
       init: function (swiper) {
         updatePagination(swiper);
         markFirstSlide(swiper);
+        setSlideStyles();
       },
       slideChange: function (swiper) {
         updatePagination(swiper);
@@ -110,10 +111,12 @@ const initNewsSlider = () => {
     duplicateSlides();
     swapSlides();
     swiperInstance.update();
+    setSlideStyles();
   });
 
   duplicateSlides();
   swapSlides();
+  setSlideStyles();
 
   function updatePagination(swiper) {
     const totalSlides = swiper.slides.length;
@@ -135,6 +138,18 @@ const initNewsSlider = () => {
       slide.classList.remove('news-slide--main');
       if (index % swiper.params.slidesPerGroup === 0) {
         slide.classList.add('news-slide--main');
+      }
+    });
+  }
+
+  function setSlideStyles() {
+    const slides = document.querySelectorAll('.news-tab__slide');
+    slides.forEach((slide) => {
+      slide.style.width = 'auto';
+      if (window.innerWidth < 1440) {
+        slide.style.height = 'auto';
+      } else {
+        slide.style.height = '';
       }
     });
   }

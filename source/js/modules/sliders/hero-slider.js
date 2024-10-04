@@ -9,7 +9,6 @@ const initHeroSlider = () => {
   }
 
   const heroSlider = document.querySelector('[data-slider="hero-slider"]');
-  let isFirstLoad = true;
 
   const initActiveSlide = () => {
     const activeSlide = document.querySelector('.swiper-slide-active');
@@ -27,22 +26,6 @@ const initHeroSlider = () => {
     activeSlide.querySelectorAll('a').forEach((slideLink) => {
       slideLink.setAttribute('tabindex', '0');
     });
-  };
-
-  const setActiveLink = () => {
-    if (isFirstLoad) {
-      return;
-    }
-
-    setTimeout(() => {
-      const activeSlide = document.querySelector('.swiper-slide-active');
-      if (activeSlide) {
-        const slideLink = activeSlide.querySelector('a');
-        if (slideLink) {
-          slideLink.focus();
-        }
-      }
-    }, 200);
   };
 
   const addAriaAttributesToBullets = () => {
@@ -73,11 +56,9 @@ const initHeroSlider = () => {
       init: () => {
         initActiveSlide();
         addAriaAttributesToBullets();
-        isFirstLoad = false;
       },
       slideChange: () => {
         initActiveSlide();
-        // setActiveLink();
       },
       slideChangeTransitionStart: () => {
         initActiveSlide();

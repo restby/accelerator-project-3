@@ -128,16 +128,6 @@
   }
 }
 
-.news-tab__slide.swiper-slide {
-  /* stylelint-disable-next-line */
-  width: auto !important;
-
-  @include vp-1439 {
-    /* stylelint-disable-next-line */
-    height: auto !important;
-  }
-}
-
 .news-tab__navigation.slider__navigation {
   max-width: none;
 }

@@ -4,8 +4,6 @@
 
 .hero__container {
   position: absolute;
-  // left: 50%;
-  // transform: translateX(-50%);
   top: 50px;
   z-index: 2;
 
@@ -90,7 +88,7 @@
   &:not(:disabled):not(:focus):not(:focus-visible):not(:active):hover {
     background-color: rgba($color-action, 0.7);
     border-color: rgba($color-white, 0.7);
-    ;
+
     transition: background-color $tf-default, border-color $tf-default;
   }
 

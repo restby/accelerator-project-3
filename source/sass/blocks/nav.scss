@@ -14,7 +14,6 @@
 }
 
 .nav__menu-list {
-  // min-width: 286px;
   margin: 0;
   padding: 0;
   padding-left: 25px;
@@ -30,10 +29,6 @@
   flex-direction: column;
   align-items: flex-start;
   row-gap: 28px;
-
-  // @include vp-767 {
-  //   min-width: 290px;
-  // }
 }
 
 .nav__menu-list.is-open {
@@ -146,6 +141,7 @@
 .nav__menu-list[aria-hidden="false"],
 .nav__submenu-list[aria-hidden="false"] {
   max-height: 500px;
+
   /* Достаточно большое значение для полного раскрытия */
   opacity: 1;
 }
