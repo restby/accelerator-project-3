@@ -1,3 +1,140 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  align-items: flex-end;
+}
+
 .nav__button {
   min-width: 136px;
+}
+
+.nav__button.is-open {
+  min-width: 286px;
+}
+
+.nav__menu-list {
+  min-width: 286px;
+  margin: 0;
+  padding: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background-color: $color-action;
+  border-radius: 16px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 28px;
+
+  @include vp-767 {
+    min-width: 290px;
+  }
+}
+
+.nav__menu-link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: rgba($color-white, 0.7);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color $trans-default;
+}
+
+.nav__menu-link:not(.is-open):not(.disabled):focus,
+.nav__menu-link:not(.is-open):not(.disabled):focus-visible,
+.nav__menu-link:not(.is-open):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover {
+  color: $color-white;
+  transition: color $trans-default;
+}
+
+.nav__menu-link:not(.is-open):not(.disabled):active {
+  color: rgba($color-white, 0.4);
+  transition: color $trans-default;
+}
+
+.nav__menu-link.has-submenu {
+  position: relative;
+  padding-right: 22px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba($color-white, 0.6);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 12px 7px;
+    mask-image: url("../__spritemap#sprite-icon-menu-arrow-view");
+    transition: background-color $trans-default;
+  }
+}
+
+.nav__menu-link.is-open {
+  color: $color-white;
+}
+
+.nav__menu-link.is-open.has-submenu::after {
+  background: $color-white;
+  transform: rotate(180deg) translateY(5px);
+}
+
+.nav__submenu-list {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 16px;
+}
+
+.nav__submenu-link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba($color-white, 0.6);
+  text-decoration: none;
+}
+
+.nav__submenu-link:not(.is-open):not(.disabled):focus,
+.nav__submenu-link:not(.is-open):not(.disabled):focus-visible,
+.nav__submenu-link:not(.is-open):not(.disabled):not(:focus):not(:focus-visible):not(:active):hover {
+  color: $color-white;
+  transition: color $trans-default;
+}
+
+.nav__submenu-link:not(.is-open):not(.disabled):active {
+  color: rgba($color-white, 0.4);
+  transition: color $trans-default;
+}
+
+.nav__submenu-link.is-open {
+  color: $color-white;
+}
+
+.nav__menu-list,
+.nav__submenu-list {
+  transition: max-height $trans-default, opacity $trans-default;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.nav__menu-list[aria-hidden="false"],
+.nav__submenu-list[aria-hidden="false"] {
+  max-height: 500px;
+  /* Достаточно большое значение для полного раскрытия */
+  opacity: 1;
 }

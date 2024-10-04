@@ -22,35 +22,44 @@
           <div class="page-header__logo">
             <img width="30" height="30" src="img/svg/logo.svg" alt="логотип проекта Стажировка.">
           </div>
-          <nav class="page-header__nav nav" aria-label="Primary">
-            <button class="nav__button btn btn--menu" data-element="nav__button" type="button">Меню</button>
-            <div class="nav__menu" data-element="menu">
-              <ul class="nav__menu-list">
-                <li><a href="#about">О проекте</a></li>
-                <li>
-                  <a class="has-submenu" href="#programs">Программы</a>
-                  <ul class="nav__submenu-list">
-                    <li><a href="#">Стажировки</a></li>
-                    <li><a href="#">Волонтёрство</a></li>
-                    <li><a href="#">Учёба</a></li>
-                    <li><a href="#">Религия</a></li>
-                  </ul>
-                </li>
-                <li><a href="#info">Как поехать</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
-                <li>
-                  <a class="has-submenu" href="#news">Новости</a>
-                  <ul class="nav__submenu-list">
-                    <li><a href="#">Общее</a></li>
-                    <li><a href="#">Волонтерство</a></li>
-                    <li><a href="#">Стажировки</a></li>
-                    <li><a href="#">Карьера</a></li>
-                    <li><a href="#">Путешествия</a></li>
-                  </ul>
-                </li>
-                <li><a href="#contacts">Контакты</a></li>
-              </ul>
-            </div>
+          <nav class="page-header__nav nav">
+            <button class="nav__button btn btn--menu" aria-expanded="false" aria-controls="list">Меню</button>
+
+            <ul class="nav__menu-list" id="list" aria-hidden="true">
+              <li class="nav__menu-item">
+                <a class="nav__menu-link" href="#about" tabindex="-1">О проекте</a>
+              </li>
+              <li class="nav__menu-item">
+                <a class="nav__menu-link has-submenu" tabindex="-1" href="#" aria-expanded="false"
+                  aria-controls="submenu-programs">Программы</a>
+                <ul class="nav__submenu-list" id="submenu-programs" aria-hidden="true">
+                  <li><a class="nav__submenu-link is-open" href="#" tabindex="-1">Стажировки</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Волонтёрство</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Учёба</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Религия</a></li>
+                </ul>
+              </li>
+              <li class="nav__menu-item">
+                <a class="nav__menu-link" href="#grant" tabindex="-1">Как поехать</a>
+              </li>
+              <li class="nav__menu-item">
+                <a class="nav__menu-link" href="#reviews" tabindex="-1">Отзывы</a>
+              </li>
+              <li class="nav__menu-item">
+                <a class="nav__menu-link has-submenu" href="#news" tabindex="-1" aria-expanded="false"
+                  aria-controls="submenu-news">Новости</a>
+                <ul class="nav__submenu-list" id="submenu-news" aria-hidden="true">
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Общее</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Волонтерство</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Стажировки</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Карьера</a></li>
+                  <li><a class="nav__submenu-link" href="#" tabindex="-1">Путешествия</a></li>
+                </ul>
+              </li>
+              <li class="nav__menu-item">
+                <a class="nav__menu-link" href="#contacts" tabindex="-1">Контакты</a>
+              </li>
+            </ul>
           </nav>
         </div>
       </div>

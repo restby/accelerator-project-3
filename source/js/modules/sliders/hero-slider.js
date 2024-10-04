@@ -77,7 +77,7 @@ const initHeroSlider = () => {
       },
       slideChange: () => {
         initActiveSlide();
-        setActiveLink();
+        // setActiveLink();
       },
       slideChangeTransitionStart: () => {
         initActiveSlide();
