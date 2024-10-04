@@ -81,6 +81,25 @@
     background-color: $color-action-alternative;
   }
 
+  &:not(:disabled):focus,
+  &:not(:disabled):focus-visible {
+    background-color: $color-action;
+    transition: background-color $tf-default;
+  }
+
+  &:not(:disabled):not(:focus):not(:focus-visible):not(:active):hover {
+    background-color: rgba($color-action, 0.7);
+    border-color: rgba($color-white, 0.7);
+    ;
+    transition: background-color $tf-default, border-color $tf-default;
+  }
+
+  &:not(:disabled):active {
+    border-color: $color-action-alternative;
+    background-color: $color-action-alternative;
+    transition: background-color $tf-default, border-color $tf-default;
+  }
+
   @include vp-767 {
     width: 8px;
     height: 8px;

@@ -14,7 +14,7 @@
 }
 
 .nav__menu-list {
-  min-width: 286px;
+  // min-width: 286px;
   margin: 0;
   padding: 0;
   padding-left: 25px;
@@ -30,6 +30,14 @@
   flex-direction: column;
   align-items: flex-start;
   row-gap: 28px;
+
+  // @include vp-767 {
+  //   min-width: 290px;
+  // }
+}
+
+.nav__menu-list.is-open {
+  min-width: 286px;
 
   @include vp-767 {
     min-width: 290px;

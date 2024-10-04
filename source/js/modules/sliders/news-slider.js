@@ -91,6 +91,7 @@ const initNewsSlider = () => {
         slidesPerView: 3,
         slidesPerGroup: 3,
         spaceBetween: 32,
+        allowTouchMove: false,
       }
     },
     on: {

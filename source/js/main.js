@@ -26,4 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initNewsSlider();
     initFaqAccordions();
   });
+
+  // window.addEventListener('resize', setTopheroPagination);
 });

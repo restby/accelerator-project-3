@@ -115,6 +115,21 @@
   text-decoration: none;
   color: $color-white;
 
+  &:not(.disabled):focus,
+  &:not(.disabled):focus-visible {
+    color: $color-dark;
+    text-decoration: underline;
+  }
+
+  &:not(.disabled):not(:focus):not(:focus-visible):not(:active):hover {
+    color: rgba($color-white, 0.7);
+  }
+
+  &:not(.disabled):active {
+    color: $color-white;
+    text-decoration: underline;
+  }
+
   @include vp-1439 {
     line-height: 20px;
   }
@@ -122,4 +137,10 @@
   @include vp-767 {
     font-size: 14px;
   }
+}
+
+.contacts__col--phone .disabled,
+.contacts__col--email .disabled {
+  color: $color-disabled;
+  pointer-events: none;
 }

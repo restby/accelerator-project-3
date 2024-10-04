@@ -29,13 +29,17 @@
     padding-top: 43px;
     padding-bottom: 39px;
 
+    max-width: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     @supports (background-image: url("image.webp")) {
       background-image: url("../../img/background/bg-form-mobile.webp");
     }
 
     background-image: url("../../img/background/bg-form-mobile.jpg");
 
-    @media (resolution >= 2dppx) {
+    @media (resolution >=2dppx) {
       @supports (background-image: url("image.webp")) {
         background-image: url("../../img/background/bg-form-mobile@2x.webp");
       }
@@ -57,7 +61,7 @@
 
   background-image: url("../../img/background/bg-form-desktop.jpg");
 
-  @media (resolution >= 2dppx) {
+  @media (resolution >=2dppx) {
     @supports (background-image: url("image.webp")) {
       background-image: url("../../img/background/bg-form-desktop@2x.webp");
     }
@@ -72,7 +76,7 @@
 
     background-image: url("../../img/background/bg-form-tablet.jpg");
 
-    @media (resolution >= 2dppx) {
+    @media (resolution >=2dppx) {
       @supports (background-image: url("image.webp")) {
         background-image: url("../../img/background/bg-form-tablet@2x.webp");
       }
@@ -83,6 +87,9 @@
 
   @include vp-767 {
     background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 

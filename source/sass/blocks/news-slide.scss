@@ -281,20 +281,49 @@
   height: 32px;
   background-color: $color-transparent;
   border-radius: 50%;
-  border: none;
+  border: 2px solid $color-transparent;
   color: rgba($color-action, 0.5);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color $tf-default, background-color $tf-default, border-color $tf-default;
 
   @include vp-767 {
     width: 26px;
     height: 26px;
   }
+
+  &:not(:disabled):focus,
+  &:not(:disabled):focus-visible {
+    color: $color-action;
+    background-color: $color-white;
+    border-color: $color-action;
+    transition: color $tf-default, background-color $tf-default, border-color $tf-default;
+  }
+
+  &:not(:disabled):not(:focus):not(:focus-visible):not(:active):hover {
+    color: $color-action;
+    background-color: $color-transparent;
+    border-color: $color-action;
+    transition: color $tf-default, background-color $tf-default, border-color $tf-default;
+  }
+
+  &:not(:disabled):active {
+    color: $color-white;
+    background-color: $color-action-alternative;
+    border-color: $color-action-alternative;
+    transition: color $tf-default, background-color $tf-default, border-color $tf-default;
+  }
+}
+
+.news-tab__slider-bullet:disabled {
+  color: $color-disabled;
+  pointer-events: none;
 }
 
 .news-tab__slider-bullet--is-active {
   background-color: $color-action;
   color: $color-white;
+  border-color: $color-action;
 }

@@ -4,6 +4,11 @@ const openMenu = () => {
   const menuLinks = document.querySelectorAll('.nav__menu-link');
   const overlay = document.querySelector('.overlay');
   const body = document.querySelector('body');
+  const logo = document.querySelector('.page-header__logo');
+
+  if (!button || !menu || !overlay || !logo) {
+    return;
+  }
 
   const toggleMenu = () => {
     button.classList.toggle('is-open');
@@ -12,6 +17,8 @@ const openMenu = () => {
     menu.setAttribute('aria-hidden', !isOpen);
     overlay.classList.toggle('is-visible', isOpen);
     body.classList.toggle('no-scroll', isOpen);
+    menu.classList.toggle('is-open', isOpen);
+    logo.classList.toggle('is-hidden', isOpen);
     menuLinks.forEach(link => link.setAttribute('tabindex', isOpen ? '0' : '-1'));
   };
 
@@ -21,6 +28,8 @@ const openMenu = () => {
     menu.setAttribute('aria-hidden', 'true');
     overlay.classList.remove('is-visible');
     body.classList.remove('no-scroll');
+    menu.classList.remove('is-open');
+    logo.classList.remove('is-hidden');
     menuLinks.forEach(link => link.setAttribute('tabindex', '-1'));
   };
 

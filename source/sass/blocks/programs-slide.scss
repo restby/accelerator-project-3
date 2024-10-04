@@ -61,6 +61,12 @@
   position: relative;
   z-index: 3;
   margin-top: auto;
+
+  //
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .programs-slide__content h3 {
