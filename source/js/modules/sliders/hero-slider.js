@@ -9,6 +9,14 @@ const initHeroSlider = () => {
   }
 
   const heroSlider = document.querySelector('[data-slider="hero-slider"]');
+  const paginationElement = document.querySelector('.hero__slider-pagination');
+
+  const movePaginationToActiveSlide = () => {
+    const activeSlide = document.querySelector('.swiper-slide-active .hero-slide__content');
+    if (activeSlide && paginationElement) {
+      activeSlide.insertBefore(paginationElement, activeSlide.firstChild);
+    }
+  };
 
   const initActiveSlide = () => {
     const activeSlide = document.querySelector('.swiper-slide-active');
@@ -26,6 +34,8 @@ const initHeroSlider = () => {
     activeSlide.querySelectorAll('a').forEach((slideLink) => {
       slideLink.setAttribute('tabindex', '0');
     });
+
+    movePaginationToActiveSlide();
   };
 
   const addAriaAttributesToBullets = () => {

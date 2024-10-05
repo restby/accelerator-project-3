@@ -9,21 +9,6 @@ const lazyLoadImages = () => {
   }
 };
 
-const setTopheroPagination = () => {
-  const heroContainer = document.querySelector('.hero__container');
-  const heroSlideContent = document.querySelector('.hero-slide__content');
-
-  if (heroContainer && heroSlideContent) {
-    const heroSlideContentRect = heroSlideContent.getBoundingClientRect();
-    const heroContainerRect = heroContainer.getBoundingClientRect();
-
-    const offset = heroSlideContentRect.top - heroContainerRect.bottom;
-
-    heroContainer.style.position = 'relative';
-    heroContainer.style.top = `${offset + 58}px`;
-  }
-};
-
 const removeFocusAfterClick = () => {
   const buttons = document.querySelectorAll('button');
 
@@ -62,4 +47,4 @@ const stylengSelectArrows = () => {
 };
 
 
-export { lazyLoadImages, setTopheroPagination, removeFocusAfterClick, stylengSelectArrows };
+export { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows };

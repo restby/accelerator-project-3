@@ -1,4 +1,4 @@
-import { lazyLoadImages, setTopheroPagination, removeFocusAfterClick, stylengSelectArrows } from '../js/modules/utils/utils';
+import { lazyLoadImages, removeFocusAfterClick, stylengSelectArrows } from '../js/modules/utils/utils';
 import { openMenu } from '../js/modules/burger-menu';
 import { validateForms } from './modules/validate-forms';
 import { initHeroSlider } from '../js/modules/sliders/hero-slider';
@@ -11,7 +11,6 @@ import { initFaqAccordions } from '../js/modules/accordions/faq-accordion';
 
 window.addEventListener('DOMContentLoaded', () => {
   lazyLoadImages();
-  setTopheroPagination();
   openMenu();
   initHeroSlider();
 
@@ -26,6 +25,4 @@ window.addEventListener('DOMContentLoaded', () => {
     initNewsSlider();
     initFaqAccordions();
   });
-
-  // window.addEventListener('resize', setTopheroPagination);
 });
